@@ -9,6 +9,9 @@ namespace Book_Manager.Models
     public class BookSale
     {
         string strTitle;
+        string strImage;
+        int intAuthor;
+        int intPublisher;
         int intQuantity;
         decimal decPrice;
 
@@ -17,21 +20,39 @@ namespace Book_Manager.Models
             strTitle = string.Empty;
             intQuantity = 0;
             decPrice = 0;
+            strImage = string.Empty;
+            intAuthor = 0;
+            intPublisher = 0;
         }
 
-        public string Title
+        public string title
         {
             get { return strTitle; }
             set { strTitle = value; }
         }
+        public string image
+        {
+            get { return strImage; }
+            set { strImage = value; }
+        }
+        public int author
+        {
+            get { return intAuthor; }
+            set { intAuthor = value; }
+        }
+        public int publisher
+        {
+            get { return intPublisher; }
+            set { intPublisher = value; }
+        }
 
-        public int Quantity
+        public int quantity
         {
             get { return intQuantity; }
             set { intQuantity = value; }
         }
 
-        public decimal Price
+        public decimal price
         {
             get { return decPrice; }
             set { decPrice = value; }

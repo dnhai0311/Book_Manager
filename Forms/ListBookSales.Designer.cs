@@ -50,8 +50,8 @@
             img = new DataGridViewImageColumn();
             price = new DataGridViewTextBoxColumn();
             quantity = new DataGridViewTextBoxColumn();
-            author = new DataGridViewComboBoxColumn();
-            publisher = new DataGridViewComboBoxColumn();
+            author = new DataGridViewTextBoxColumn();
+            publisher = new DataGridViewTextBoxColumn();
             modify = new DataGridViewButtonColumn();
             delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvListBookSales).BeginInit();
@@ -179,7 +179,7 @@
             // 
             // id
             // 
-            id.HeaderText = "STT";
+            id.HeaderText = "Mã ID";
             id.MinimumWidth = 6;
             id.Name = "id";
             id.ReadOnly = true;
@@ -219,7 +219,6 @@
             author.Name = "author";
             author.ReadOnly = true;
             author.Resizable = DataGridViewTriState.True;
-            author.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // publisher
             // 
@@ -228,7 +227,6 @@
             publisher.Name = "publisher";
             publisher.ReadOnly = true;
             publisher.Resizable = DataGridViewTriState.True;
-            publisher.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // modify
             // 
@@ -259,6 +257,7 @@
             Name = "ListBookSales";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ListBookSales";
+            Activated += ListBookSales_Activated;
             Load += ListBookSales_Load;
             ((System.ComponentModel.ISupportInitialize)dgvListBookSales).EndInit();
             contextMenuStrip1.ResumeLayout(false);
@@ -291,8 +290,8 @@
         private DataGridViewImageColumn img;
         private DataGridViewTextBoxColumn price;
         private DataGridViewTextBoxColumn quantity;
-        private DataGridViewComboBoxColumn author;
-        private DataGridViewComboBoxColumn publisher;
+        private DataGridViewTextBoxColumn author;
+        private DataGridViewTextBoxColumn publisher;
         private DataGridViewButtonColumn modify;
         private DataGridViewButtonColumn delete;
     }

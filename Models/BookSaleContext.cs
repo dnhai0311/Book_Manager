@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,20 +9,20 @@ namespace Book_Manager.Models
 {
     public class BookSaleContext
     {
-        public List<BookSale> Sales { get; set; }
+        public BindingList<BookSale> BookSales { get; set; }
         public BookSaleContext()
         {
-            Sales = new List<BookSale>();
+            BookSales = new BindingList<BookSale>();
         }
         public void add(BookSale bookSale)
         {
-            Sales.Add(bookSale);
+            BookSales.Add(bookSale);
         }
 
         public decimal getSalesTotal()
         {
             decimal total = 0M;
-            foreach (BookSale bookSale in Sales)
+            foreach (BookSale bookSale in BookSales)
             {
                 total += bookSale.ExtendedPrice();
             }
@@ -30,7 +31,7 @@ namespace Book_Manager.Models
 
         public decimal getSalesCount()
         {
-            return Sales.Count();
+            return BookSales.Count();
         }
     }
 }

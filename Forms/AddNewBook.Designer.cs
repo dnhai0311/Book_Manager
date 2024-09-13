@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            txtName = new TextBox();
+            txtTitle = new TextBox();
             pbImage = new PictureBox();
             btnChangeImg = new Button();
             label2 = new Label();
@@ -55,12 +55,12 @@
             label1.TabIndex = 0;
             label1.Text = "Thêm sách mới";
             // 
-            // txtName
+            // txtTitle
             // 
-            txtName.Location = new Point(462, 122);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(236, 27);
-            txtName.TabIndex = 1;
+            txtTitle.Location = new Point(462, 122);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(236, 27);
+            txtTitle.TabIndex = 1;
             // 
             // pbImage
             // 
@@ -104,6 +104,7 @@
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(236, 27);
             txtPrice.TabIndex = 2;
+            txtPrice.KeyPress += txtPrice_KeyPress;
             // 
             // label4
             // 
@@ -120,6 +121,7 @@
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(236, 27);
             txtQuantity.TabIndex = 3;
+            txtQuantity.KeyPress += txtPrice_KeyPress;
             // 
             // label5
             // 
@@ -147,9 +149,11 @@
             btnAddNew.TabIndex = 7;
             btnAddNew.Text = "Thêm mới";
             btnAddNew.UseVisualStyleBackColor = true;
+            btnAddNew.Click += btnAddNew_Click;
             // 
             // cbAuthor
             // 
+            cbAuthor.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAuthor.FormattingEnabled = true;
             cbAuthor.Location = new Point(462, 306);
             cbAuthor.Name = "cbAuthor";
@@ -158,6 +162,7 @@
             // 
             // cbPublisher
             // 
+            cbPublisher.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPublisher.FormattingEnabled = true;
             cbPublisher.Location = new Point(462, 369);
             cbPublisher.Name = "cbPublisher";
@@ -180,7 +185,7 @@
             Controls.Add(label4);
             Controls.Add(txtPrice);
             Controls.Add(label3);
-            Controls.Add(txtName);
+            Controls.Add(txtTitle);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "AddNewBook";
@@ -195,7 +200,7 @@
         #endregion
 
         private Label label1;
-        private TextBox txtName;
+        private TextBox txtTitle;
         private PictureBox pbImage;
         private Button btnChangeImg;
         private Label label2;
