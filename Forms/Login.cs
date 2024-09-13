@@ -19,12 +19,12 @@ namespace Book_Manager.Forms
         {
             string name = txtName.Text;
             string password = txtPassword.Text;
-            Auth auth = new Auth();
+            var auth = new Auth();
             bool result = auth.AuthenticateUser(name, password);
             if (result)
             {
                 MessageBox.Show("Thành công!!");
-                Menu menuForm = new Menu();
+                var menuForm = new Menu();
                 menuForm.Show();
                 this.Hide();
                 menuForm.FormClosed += MenuForm_FormClosed;

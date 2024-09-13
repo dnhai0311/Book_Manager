@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Book_Manager.Models;
+using Book_Manager.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace Book_Manager.Forms
 {
     public partial class Menu : Form
     {
+
         public Menu()
         {
             InitializeComponent();
+
         }
 
         private void ListBookSalesForm_FormClosed(object? sender, FormClosedEventArgs e)
@@ -24,7 +28,7 @@ namespace Book_Manager.Forms
 
         private void btnListBookSales_Click(object sender, EventArgs e)
         {
-            ListBookSales listBookSalesForm = new ListBookSales();
+            var listBookSalesForm = new ListBookSales();
             listBookSalesForm.Show();
             this.Hide();
             listBookSalesForm.FormClosed += ListBookSalesForm_FormClosed;

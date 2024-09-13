@@ -8,8 +8,8 @@ namespace Book_Manager.Repositories
         {
             bool isLoggedIn = false;
 
-            string query = "SELECT COUNT(1) FROM USER WHERE user.name = @name AND user.password = @password";
-            Database.open();
+            string query = "SELECT COUNT(1) FROM USERS WHERE users.name = @name AND users.password = @password";
+            Database.Open();
 
             using (MySqlCommand command = new MySqlCommand(query, Database.con))
             {
@@ -24,7 +24,7 @@ namespace Book_Manager.Repositories
                     isLoggedIn = true;
                 }
 
-                Database.close();
+                Database.Close();
             }
             return isLoggedIn;
         }

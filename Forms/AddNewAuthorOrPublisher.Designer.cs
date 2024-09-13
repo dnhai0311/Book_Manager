@@ -59,6 +59,7 @@
             btnSubmit.TabIndex = 2;
             btnSubmit.Text = "Thêm mới";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // AddNewAuthorOrPublisher
             // 

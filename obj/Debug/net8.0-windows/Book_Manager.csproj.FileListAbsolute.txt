@@ -43,3 +43,4 @@ D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.Forms.ListBookSales.
 D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.Forms.AddNewBook.resources
 D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.Forms.AddNewAuthorOrPublisher.resources
 D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.Properties.Resources.resources
+D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.sourcelink.json

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Book_Manager.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Book_Manager.Forms
 {
     public partial class AddNewBook : Form
     {
-        public AddNewBook()
+        public AddNewBook(AuthorContext authorContext, PublisherContext publisherContext)
         {
             InitializeComponent();
+            cbAuthor.DataSource = authorContext.GetAuthorNames();
+            cbPublisher.DataSource = publisherContext.GetPublisherNames();
         }
 
         private void AddNewBook_Load(object sender, EventArgs e)

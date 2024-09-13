@@ -5,7 +5,7 @@ namespace Book_Manager.Repositories
     public class Database
     {
         public static MySqlConnection con = new MySqlConnection();
-        public static bool open()
+        public static bool Open()
         {
             try
             {
@@ -19,7 +19,7 @@ namespace Book_Manager.Repositories
             return true;
         }
 
-        public static bool close()
+        public static bool Close()
         {
             try
             {

@@ -30,15 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             dgvListBookSales = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            name = new DataGridViewTextBoxColumn();
-            img = new DataGridViewImageColumn();
-            price = new DataGridViewTextBoxColumn();
-            quantity = new DataGridViewTextBoxColumn();
-            author = new DataGridViewComboBoxColumn();
-            publisher = new DataGridViewComboBoxColumn();
-            modify = new DataGridViewButtonColumn();
-            delete = new DataGridViewButtonColumn();
             label1 = new Label();
             txtSearch = new TextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
@@ -53,6 +44,16 @@
             xemToolStripMenuItem = new ToolStripMenuItem();
             danhSáchTácGiảToolStripMenuItem = new ToolStripMenuItem();
             danhSáchNhàXuấtBảnToolStripMenuItem = new ToolStripMenuItem();
+            quayLạiToolStripMenuItem = new ToolStripMenuItem();
+            id = new DataGridViewTextBoxColumn();
+            name = new DataGridViewTextBoxColumn();
+            img = new DataGridViewImageColumn();
+            price = new DataGridViewTextBoxColumn();
+            quantity = new DataGridViewTextBoxColumn();
+            author = new DataGridViewComboBoxColumn();
+            publisher = new DataGridViewComboBoxColumn();
+            modify = new DataGridViewButtonColumn();
+            delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvListBookSales).BeginInit();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -68,68 +69,6 @@
             dgvListBookSales.RowHeadersWidth = 51;
             dgvListBookSales.Size = new Size(1317, 350);
             dgvListBookSales.TabIndex = 1;
-            // 
-            // id
-            // 
-            id.HeaderText = "STT";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            // 
-            // name
-            // 
-            name.HeaderText = "Tên sách";
-            name.MinimumWidth = 6;
-            name.Name = "name";
-            // 
-            // img
-            // 
-            img.HeaderText = "Hình ảnh";
-            img.MinimumWidth = 6;
-            img.Name = "img";
-            // 
-            // price
-            // 
-            price.HeaderText = "Giá";
-            price.MinimumWidth = 6;
-            price.Name = "price";
-            // 
-            // quantity
-            // 
-            quantity.HeaderText = "Số lượng";
-            quantity.MinimumWidth = 6;
-            quantity.Name = "quantity";
-            // 
-            // author
-            // 
-            author.HeaderText = "Tác giả";
-            author.MinimumWidth = 6;
-            author.Name = "author";
-            author.Resizable = DataGridViewTriState.True;
-            author.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // publisher
-            // 
-            publisher.HeaderText = "Nhà xuất bản";
-            publisher.MinimumWidth = 6;
-            publisher.Name = "publisher";
-            publisher.Resizable = DataGridViewTriState.True;
-            publisher.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // modify
-            // 
-            modify.HeaderText = "";
-            modify.MinimumWidth = 6;
-            modify.Name = "modify";
-            modify.Text = "Sửa";
-            modify.UseColumnTextForButtonValue = true;
-            // 
-            // delete
-            // 
-            delete.HeaderText = "";
-            delete.MinimumWidth = 6;
-            delete.Name = "delete";
-            delete.Text = "Xóa";
-            delete.UseColumnTextForButtonValue = true;
             // 
             // label1
             // 
@@ -177,7 +116,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, xemToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, xemToolStripMenuItem, quayLạiToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1341, 28);
@@ -194,21 +133,21 @@
             // sáchMớiToolStripMenuItem
             // 
             sáchMớiToolStripMenuItem.Name = "sáchMớiToolStripMenuItem";
-            sáchMớiToolStripMenuItem.Size = new Size(224, 26);
+            sáchMớiToolStripMenuItem.Size = new Size(210, 26);
             sáchMớiToolStripMenuItem.Text = "Sách mới";
             sáchMớiToolStripMenuItem.Click += SáchMớiToolStripMenuItem_Click;
             // 
             // tácGiảMớiToolStripMenuItem
             // 
             tácGiảMớiToolStripMenuItem.Name = "tácGiảMớiToolStripMenuItem";
-            tácGiảMớiToolStripMenuItem.Size = new Size(224, 26);
+            tácGiảMớiToolStripMenuItem.Size = new Size(210, 26);
             tácGiảMớiToolStripMenuItem.Text = "Tác giả mới";
             tácGiảMớiToolStripMenuItem.Click += TácGiảMớiToolStripMenuItem_Click;
             // 
             // nhàXuấtBảnMớiToolStripMenuItem
             // 
             nhàXuấtBảnMớiToolStripMenuItem.Name = "nhàXuấtBảnMớiToolStripMenuItem";
-            nhàXuấtBảnMớiToolStripMenuItem.Size = new Size(224, 26);
+            nhàXuấtBảnMớiToolStripMenuItem.Size = new Size(210, 26);
             nhàXuấtBảnMớiToolStripMenuItem.Text = "Nhà xuất bản mới";
             nhàXuấtBảnMớiToolStripMenuItem.Click += NhàXuấtBảnMớiToolStripMenuItem_Click;
             // 
@@ -231,6 +170,82 @@
             danhSáchNhàXuấtBảnToolStripMenuItem.Size = new Size(249, 26);
             danhSáchNhàXuấtBảnToolStripMenuItem.Text = "Danh sách nhà xuất bản";
             // 
+            // quayLạiToolStripMenuItem
+            // 
+            quayLạiToolStripMenuItem.Name = "quayLạiToolStripMenuItem";
+            quayLạiToolStripMenuItem.Size = new Size(77, 24);
+            quayLạiToolStripMenuItem.Text = "Quay lại";
+            quayLạiToolStripMenuItem.Click += quayLạiToolStripMenuItem_Click;
+            // 
+            // id
+            // 
+            id.HeaderText = "STT";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.ReadOnly = true;
+            // 
+            // name
+            // 
+            name.HeaderText = "Tên sách";
+            name.MinimumWidth = 6;
+            name.Name = "name";
+            name.ReadOnly = true;
+            // 
+            // img
+            // 
+            img.HeaderText = "Hình ảnh";
+            img.MinimumWidth = 6;
+            img.Name = "img";
+            img.ReadOnly = true;
+            // 
+            // price
+            // 
+            price.HeaderText = "Giá";
+            price.MinimumWidth = 6;
+            price.Name = "price";
+            price.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            quantity.HeaderText = "Số lượng";
+            quantity.MinimumWidth = 6;
+            quantity.Name = "quantity";
+            quantity.ReadOnly = true;
+            // 
+            // author
+            // 
+            author.HeaderText = "Tác giả";
+            author.MinimumWidth = 6;
+            author.Name = "author";
+            author.ReadOnly = true;
+            author.Resizable = DataGridViewTriState.True;
+            author.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // publisher
+            // 
+            publisher.HeaderText = "Nhà xuất bản";
+            publisher.MinimumWidth = 6;
+            publisher.Name = "publisher";
+            publisher.ReadOnly = true;
+            publisher.Resizable = DataGridViewTriState.True;
+            publisher.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // modify
+            // 
+            modify.HeaderText = "";
+            modify.MinimumWidth = 6;
+            modify.Name = "modify";
+            modify.Text = "Sửa";
+            modify.UseColumnTextForButtonValue = true;
+            // 
+            // delete
+            // 
+            delete.HeaderText = "";
+            delete.MinimumWidth = 6;
+            delete.Name = "delete";
+            delete.Text = "Xóa";
+            delete.UseColumnTextForButtonValue = true;
+            // 
             // ListBookSales
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -244,6 +259,7 @@
             Name = "ListBookSales";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ListBookSales";
+            Load += ListBookSales_Load;
             ((System.ComponentModel.ISupportInitialize)dgvListBookSales).EndInit();
             contextMenuStrip1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
@@ -269,6 +285,7 @@
         private ToolStripMenuItem xemToolStripMenuItem;
         private ToolStripMenuItem danhSáchTácGiảToolStripMenuItem;
         private ToolStripMenuItem danhSáchNhàXuấtBảnToolStripMenuItem;
+        private ToolStripMenuItem quayLạiToolStripMenuItem;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn name;
         private DataGridViewImageColumn img;
