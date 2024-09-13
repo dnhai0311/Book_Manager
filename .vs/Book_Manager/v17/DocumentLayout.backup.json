@@ -1,0 +1,202 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Codes\\Book_Manager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewauthororpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewauthororpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewauthororpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewauthororpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\book_manager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:book_manager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|D:\\Codes\\Book_Manager\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddNewAuthorOrPublisher.cs [Design]",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewAuthorOrPublisher.cs",
+              "RelativeDocumentMoniker": "Forms\\AddNewAuthorOrPublisher.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewAuthorOrPublisher.cs [Design]",
+              "RelativeToolTip": "Forms\\AddNewAuthorOrPublisher.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:26:19.478Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddNewBook.cs [Design]",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs",
+              "RelativeDocumentMoniker": "Forms\\AddNewBook.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs [Design]",
+              "RelativeToolTip": "Forms\\AddNewBook.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:13:18.414Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ListBookSales.cs [Design]",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\ListBookSales.cs",
+              "RelativeDocumentMoniker": "Forms\\ListBookSales.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\ListBookSales.cs [Design]",
+              "RelativeToolTip": "Forms\\ListBookSales.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T13:00:29.369Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddNewBook.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs",
+              "RelativeDocumentMoniker": "Forms\\AddNewBook.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs",
+              "RelativeToolTip": "Forms\\AddNewBook.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAUwBoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:17:43.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddNewAuthorOrPublisher.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewAuthorOrPublisher.cs",
+              "RelativeDocumentMoniker": "Forms\\AddNewAuthorOrPublisher.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewAuthorOrPublisher.cs",
+              "RelativeToolTip": "Forms\\AddNewAuthorOrPublisher.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:27:30.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Book_Manager",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Book_Manager.csproj",
+              "RelativeDocumentMoniker": "Book_Manager.csproj",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Book_Manager.csproj",
+              "RelativeToolTip": "Book_Manager.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-13T14:35:37.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ListBookSales.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\ListBookSales.cs",
+              "RelativeDocumentMoniker": "Forms\\ListBookSales.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\ListBookSales.cs",
+              "RelativeToolTip": "Forms\\ListBookSales.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA3wBMAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:20:58.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\Login.cs",
+              "RelativeDocumentMoniker": "Forms\\Login.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\Login.cs [Design]",
+              "RelativeToolTip": "Forms\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:17:04.506Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\Login.cs",
+              "RelativeDocumentMoniker": "Forms\\Login.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\Login.cs",
+              "RelativeToolTip": "Forms\\Login.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAowCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T14:17:07.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\Menu.cs",
+              "RelativeDocumentMoniker": "Forms\\Menu.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\Menu.cs",
+              "RelativeToolTip": "Forms\\Menu.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAewB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T12:51:56.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Menu.cs [Design]",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\Menu.cs",
+              "RelativeDocumentMoniker": "Forms\\Menu.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\Menu.cs [Design]",
+              "RelativeToolTip": "Forms\\Menu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T12:50:21.001Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
