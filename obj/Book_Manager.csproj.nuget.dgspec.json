@@ -53,6 +53,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.6, )"
+            },
+            "Unidecode.NET": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             }
           },
           "imports": [

@@ -9,7 +9,8 @@
       "Book_Manager/1.0.0": {
         "dependencies": {
           "MySql.Data": "9.0.0",
-          "System.Data.SqlClient": "4.8.6"
+          "System.Data.SqlClient": "4.8.6",
+          "Unidecode.NET": "2.1.0"
         },
         "runtime": {
           "Book_Manager.dll": {}
@@ -276,6 +277,14 @@
       },
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "System.Windows.Extensions/8.0.0": {},
+      "Unidecode.NET/2.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/Unidecode.NET.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
       "ZstdSharp.Port/0.8.0": {
         "runtime": {
           "lib/net8.0/ZstdSharp.dll": {
@@ -543,6 +552,13 @@
       "sha512": "sha512-Obg3a90MkOw9mYKxrardLpY2u0axDMrSmy4JCdq2cYbelM2cUwmUir5Bomvd1yxmPL9h5LVHU1tuKBZpUjfASg==",
       "path": "system.windows.extensions/8.0.0",
       "hashPath": "system.windows.extensions.8.0.0.nupkg.sha512"
+    },
+    "Unidecode.NET/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AY7AC9+8wOgKY/RNol7BTiVk6BO46l0+O2TtwUdhRneixRzxYW278bd+AtCe13P1iU8hG1hdICa2UJyHzx95nA==",
+      "path": "unidecode.net/2.1.0",
+      "hashPath": "unidecode.net.2.1.0.nupkg.sha512"
     },
     "ZstdSharp.Port/0.8.0": {
       "type": "package",

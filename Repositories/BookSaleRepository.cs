@@ -96,5 +96,43 @@ namespace Book_Manager.Repositories
                 bookSaleContext.BookSales.Add(bookSale);
             }
         }
+
+        public BookSale GetBookSaleByTitle(string title)
+        {
+            var bookSale = new BookSale();
+
+            if (!Database.Open()) return bookSale;
+
+            try
+            {
+                using (var cmd = new MySqlCommand("SELECT * FROM booksales WHERE title = @title", Database.con))
+                {
+                    cmd.Parameters.AddWithValue("@title", title);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bookSale = new BookSale
+                            {
+                                title = reader.GetString("title"),
+                                image = reader.GetString("image"),
+                                price = reader.GetDecimal("price"),
+                                quantity = reader.GetInt32("quantity"),
+                                author = reader.GetInt32("author"),
+                                publisher = reader.GetInt32("publisher")
+                            };
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                Database.Close();
+            }
+
+            return bookSale;
+        }
+
     }
 }

@@ -44,3 +44,4 @@ D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.Forms.AddNewBook.res
 D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.Forms.AddNewAuthorOrPublisher.resources
 D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.Properties.Resources.resources
 D:\Codes\Book_Manager\obj\Debug\net8.0-windows\Book_Manager.sourcelink.json
+D:\Codes\Book_Manager\bin\Debug\net8.0-windows\Unidecode.NET.dll

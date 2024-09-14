@@ -16,6 +16,7 @@ namespace Book_Manager.Forms
     {
         string imgPath = string.Empty;
         string id;
+        BookSale? bookSale;
         BookSaleRepository bookSaleRepository;
 
         public delegate void BookAddedHandler(BookSale bookSale);
@@ -23,16 +24,21 @@ namespace Book_Manager.Forms
 
         string defaultImagePath = @"..\..\..\Images\default-book-img.jpg";
 
+        public AddNewBook(AuthorContext authorContext, PublisherContext publisherContext, BookSaleRepository bookSaleRepository)
+        {
+            InitializeComponent();
+            cbAuthor.DataSource = authorContext.GetAuthorNames();
+            cbPublisher.DataSource = publisherContext.GetPublisherNames();
+            this.bookSaleRepository = bookSaleRepository;
+            id = bookSaleRepository.SalesCount().ToString();
+        }
+
         public AddNewBook(AuthorContext authorContext, PublisherContext publisherContext, BookSaleRepository bookSaleRepository, string id)
         {
             InitializeComponent();
             cbAuthor.DataSource = authorContext.GetAuthorNames();
             cbPublisher.DataSource = publisherContext.GetPublisherNames();
             this.bookSaleRepository = bookSaleRepository;
-            if (id == String.Empty)
-            {
-                id = bookSaleRepository.SalesCount().ToString();
-            }
             this.id = id;
         }
 
@@ -75,7 +81,7 @@ namespace Book_Manager.Forms
                 MessageBox.Show("Vui lòng nhập~~");
                 return;
             }
-            var bookSale = new BookSale
+            bookSale = new BookSale
             {
                 title = txtTitle.Text,
                 image = imgPath,

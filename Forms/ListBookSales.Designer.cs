@@ -67,12 +67,12 @@
             dgvListBookSales.Location = new Point(12, 102);
             dgvListBookSales.Name = "dgvListBookSales";
             dgvListBookSales.RowHeadersWidth = 51;
-            dgvListBookSales.Size = new Size(1317, 350);
+            dgvListBookSales.Size = new Size(1317, 587);
             dgvListBookSales.TabIndex = 1;
             // 
             // id
             // 
-            id.HeaderText = "Mã ID";
+            id.HeaderText = "STT";
             id.MinimumWidth = 6;
             id.Name = "id";
             id.ReadOnly = true;
@@ -155,6 +155,7 @@
             txtSearch.PlaceholderText = "Hãy nhập thứ bạn muốn tìm kiếm...";
             txtSearch.Size = new Size(412, 27);
             txtSearch.TabIndex = 0;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // contextMenuStrip1
             // 
@@ -249,7 +250,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1341, 465);
+            ClientSize = new Size(1341, 701);
             Controls.Add(menuStrip1);
             Controls.Add(txtSearch);
             Controls.Add(label1);

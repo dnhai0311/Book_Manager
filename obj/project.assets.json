@@ -602,6 +602,19 @@
           }
         }
       },
+      "Unidecode.NET/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Unidecode.NET.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Unidecode.NET.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ZstdSharp.Port/0.8.0": {
         "type": "package",
         "compile": {
@@ -2015,6 +2028,23 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Unidecode.NET/2.1.0": {
+      "sha512": "AY7AC9+8wOgKY/RNol7BTiVk6BO46l0+O2TtwUdhRneixRzxYW278bd+AtCe13P1iU8hG1hdICa2UJyHzx95nA==",
+      "type": "package",
+      "path": "unidecode.net/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.2/Unidecode.NET.dll",
+        "lib/netstandard1.2/Unidecode.NET.xml",
+        "lib/netstandard2.0/Unidecode.NET.dll",
+        "lib/netstandard2.0/Unidecode.NET.xml",
+        "lib/netstandard2.1/Unidecode.NET.dll",
+        "lib/netstandard2.1/Unidecode.NET.xml",
+        "unidecode.net.2.1.0.nupkg.sha512",
+        "unidecode.net.nuspec"
+      ]
+    },
     "ZstdSharp.Port/0.8.0": {
       "sha512": "Z62eNBIu8E8YtbqlMy57tK3dV1+m2b9NhPeaYovB5exmLKvrGCqOhJTzrEUH5VyUWU6vwX3c1XHJGhW5HVs8dA==",
       "type": "package",
@@ -2038,7 +2068,8 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "MySql.Data >= 9.0.0",
-      "System.Data.SqlClient >= 4.8.6"
+      "System.Data.SqlClient >= 4.8.6",
+      "Unidecode.NET >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -2093,6 +2124,10 @@
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.6, )"
+          },
+          "Unidecode.NET": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           }
         },
         "imports": [
