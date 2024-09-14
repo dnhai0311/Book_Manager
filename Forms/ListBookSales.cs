@@ -214,11 +214,24 @@ namespace Book_Manager.Forms
         }
         private void OnBookDeleted(BookSale bookSale)
         {
-            dgvListBookSales.Rows.RemoveAt(dgvListBookSales.Rows
+            var rowToDelete = dgvListBookSales.Rows
                 .Cast<DataGridViewRow>()
                 .Where(row => (int)row.Cells[0].Value == bookSale.id)
-                .Select(row => row.Index)
-                .FirstOrDefault());
+                .FirstOrDefault();
+
+            if (rowToDelete != null)
+            {
+                rowToDelete.Cells[2].Value = null;
+
+                dgvListBookSales.Rows.RemoveAt(rowToDelete.Index);
+            }
+
+            if (bookSale.image != @"..\..\..\Images\default-book-img.jpg" && File.Exists(bookSale.image))
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                File.Delete(bookSale.image);
+            }
         }
 
     }
