@@ -14,12 +14,13 @@ namespace Book_Manager.Forms
 {
     public partial class ListBookSales : Form
     {
-        readonly AuthorContext authorContext;
-        readonly AuthorRepository authorRepository;
-        readonly PublisherContext publisherContext;
-        readonly PublisherRepository publisherRepository;
-        readonly BookSaleContext bookSaleContext;
-        readonly BookSaleRepository bookSaleRepository;
+        AuthorContext authorContext;
+        AuthorRepository authorRepository;
+        PublisherContext publisherContext;
+        PublisherRepository publisherRepository;
+        BookSaleContext bookSaleContext;
+        BookSaleRepository bookSaleRepository;
+
 
         public ListBookSales()
         {
@@ -34,7 +35,10 @@ namespace Book_Manager.Forms
 
         private void SáchMớiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AddNewBook(authorContext, publisherContext, bookSaleRepository).ShowDialog();
+            var addNewBookForm = new AddNewBook(authorContext, publisherContext, bookSaleRepository, String.Empty);
+            addNewBookForm.BookAdded += OnBookAdded;
+            addNewBookForm.ShowDialog();
+
         }
 
         private void TácGiảMớiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,26 +60,51 @@ namespace Book_Manager.Forms
         {
             authorRepository.UpdateRepositoryWithAllAuthors();
             publisherRepository.UpdateRepositoryWithAllPublishers();
-        }
 
-        private void ListBookSales_Activated(object sender, EventArgs e)
-        {
+            dgvListBookSales.RowTemplate.Height = 150;
+            dgvListBookSales.Columns[0].Width = 40;
+            dgvListBookSales.Columns[7].Width = 40;
+            dgvListBookSales.Columns[8].Width = 40;
+            dgvListBookSales.AllowUserToAddRows = false;
+
+
             bookSaleRepository.UpdateRepositoryWithAllBookSales();
             dgvListBookSales.Rows.Clear();
             int id = 0;
+
             foreach (var bookSale in bookSaleContext.BookSales)
             {
+                Image img = Image.FromFile(bookSale.image);
+
                 dgvListBookSales.Rows.Add(
                     id,
                     bookSale.title,
-                    Image.FromFile(bookSale.image),
+                    img,
                     bookSale.price.ToString("C"),
                     bookSale.quantity,
                     authorContext.Authors[bookSale.author].name,
                     publisherContext.Publishers[bookSale.publisher].name
                 );
+
                 id++;
             }
+
+        }
+
+        private void OnBookAdded(BookSale bookSale)
+        {
+            int id = (int)bookSaleRepository.SalesCount()-1;
+            Image img = Image.FromFile(bookSale.image);
+            dgvListBookSales.Rows.Add(
+                id,
+                bookSale.title,
+                img,
+                bookSale.price.ToString("C"),
+                bookSale.quantity,
+                authorContext.Authors[bookSale.author].name,
+                publisherContext.Publishers[bookSale.publisher].name
+            );
+
         }
     }
 }

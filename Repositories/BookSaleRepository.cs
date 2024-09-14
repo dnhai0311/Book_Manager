@@ -11,8 +11,8 @@ namespace Book_Manager.Repositories
     public class BookSaleRepository : IBookSaleRepository
     {
         BookSaleContext bookSaleContext { get; set; }
-        readonly AuthorContext authorContext;
-        readonly PublisherContext publisherContext;
+        AuthorContext authorContext;
+        PublisherContext publisherContext;
         public BookSaleRepository(BookSaleContext bookSaleContext, AuthorContext authorContext, PublisherContext publisherContext)
         {
             this.bookSaleContext = bookSaleContext;
@@ -25,7 +25,7 @@ namespace Book_Manager.Repositories
             string query = "INSERT INTO booksales (title, image, price, quantity, author, publisher) " +
                 "VALUES (@title, @image, @price, @quantity, @author, @publisher)";
 
-            Database.Open();
+            if (!Database.Open()) return;
 
             using (MySqlCommand command = new MySqlCommand(query, Database.con))
             {
@@ -53,7 +53,8 @@ namespace Book_Manager.Repositories
         {
             var bookSales = new List<BookSale>();
 
-            Database.Open();
+            if (!Database.Open()) return bookSales;
+
             try
             {
                 using (var cmd = new MySqlCommand("SELECT * FROM booksales", Database.con))

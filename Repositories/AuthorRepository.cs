@@ -19,7 +19,7 @@ namespace Book_Manager.Repositories
             this.authorContext.add(author);
 
             string query = "INSERT INTO authors (name) VALUES (@name)";
-            Database.Open();
+            if (!Database.Open()) return;
 
             using (MySqlCommand command = new MySqlCommand(query, Database.con))
             {
@@ -34,7 +34,7 @@ namespace Book_Manager.Repositories
         {
             var authors = new List<Author>();
 
-            Database.Open();
+            if (!Database.Open()) return authors;
             try
             {
                 using (var cmd = new MySqlCommand("SELECT * FROM authors", Database.con))

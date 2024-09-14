@@ -14,9 +14,9 @@ namespace Book_Manager.Forms
 {
     public partial class AddNewAuthorOrPublisher : Form
     {
-        readonly string name;
-        readonly IAuthorRepository authorRepository;
-        readonly IPublisherRepository publisherRepository;
+        string name;
+        IAuthorRepository authorRepository;
+        IPublisherRepository publisherRepository;
 
         public AddNewAuthorOrPublisher(IAuthorRepository authorRepository, IPublisherRepository publisherRepository, string name)
         {
@@ -35,12 +35,12 @@ namespace Book_Manager.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(txtName.Text.Length <= 0)
+            if (txtName.Text.Length <= 0)
             {
                 MessageBox.Show("Vui lòng nhập~~");
                 return;
             }
-            if(name == "tác giả")
+            if (name == "tác giả")
             {
                 var author = new Author
                 {

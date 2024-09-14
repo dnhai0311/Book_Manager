@@ -20,7 +20,7 @@ namespace Book_Manager.Repositories
             this.publisherContext.Add(publisher);
 
             string query = "INSERT INTO publishers (name) VALUES (@name)";
-            Database.Open();
+            if (!Database.Open()) return;
 
             using (MySqlCommand command = new MySqlCommand(query, Database.con))
             {
@@ -35,7 +35,8 @@ namespace Book_Manager.Repositories
         {
             var publishers = new List<Publisher>();
 
-            Database.Open();
+            if (!Database.Open()) return publishers;
+
             try
             {
                 using (var cmd = new MySqlCommand("SELECT * FROM publishers", Database.con))

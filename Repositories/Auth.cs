@@ -9,7 +9,7 @@ namespace Book_Manager.Repositories
             bool isLoggedIn = false;
 
             string query = "SELECT COUNT(1) FROM USERS WHERE users.name = @name AND users.password = @password";
-            Database.Open();
+            if (!Database.Open()) return false;
 
             using (MySqlCommand command = new MySqlCommand(query, Database.con))
             {

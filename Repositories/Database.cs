@@ -12,8 +12,9 @@ namespace Book_Manager.Repositories
                 con = new MySqlConnection("Server=localhost;Database=book_manager;Uid=root;Pwd=;");
                 con.Open();
             }
-            catch (Exception)
+            catch (Exception) 
             {
+                MessageBox.Show($"Không thể kết nối với database");
                 return false;
             }
             return true;
@@ -27,6 +28,7 @@ namespace Book_Manager.Repositories
             }
             catch (Exception)
             {
+                MessageBox.Show($"Không thể kết nối với database");
                 return false;
             }
             return true;
