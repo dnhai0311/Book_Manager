@@ -21,6 +21,8 @@ namespace Book_Manager.Forms
         public delegate void BookAddedHandler(BookSale bookSale);
         public event BookAddedHandler? BookAdded;
 
+        string defaultImagePath = @"..\..\..\Images\default-book-img.jpg";
+
         public AddNewBook(AuthorContext authorContext, PublisherContext publisherContext, BookSaleRepository bookSaleRepository, string id)
         {
             InitializeComponent();
@@ -36,7 +38,6 @@ namespace Book_Manager.Forms
 
         private void AddNewBook_Load(object sender, EventArgs e)
         {
-            string defaultImagePath = @"..\..\..\Images\default-book-img.jpg";
             pbImage.Image = Image.FromFile(defaultImagePath);
             pbImage.SizeMode = PictureBoxSizeMode.CenterImage;
             imgPath = defaultImagePath;
@@ -85,7 +86,7 @@ namespace Book_Manager.Forms
             };
             bookSaleRepository.AddSale(bookSale);
 
-            if (File.Exists(imgPath))
+            if (File.Exists(imgPath) && imgPath != defaultImagePath)
             {
                 try
                 {
@@ -94,7 +95,7 @@ namespace Book_Manager.Forms
                     string newFilePath = Path.Combine(destFolder, newFileName);
 
                     File.Copy(imgPath, newFilePath, true);
-                    imgPath = newFilePath; 
+                    imgPath = newFilePath;
                 }
                 catch (Exception ex)
                 {

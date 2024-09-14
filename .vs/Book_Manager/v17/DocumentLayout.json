@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|D:\\Codes\\Book_Manager\\forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewauthororpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|D:\\Codes\\Book_Manager\\forms\\addnewauthororpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewauthororpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|D:\\Codes\\Book_Manager\\forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -59,8 +59,7 @@
               "ViewState": "AgIAABAAAAAAAAAAAAAuwBwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-14T02:51:58.155Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -70,7 +69,7 @@
               "RelativeDocumentMoniker": "Forms\\AddNewBook.cs",
               "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs",
               "RelativeToolTip": "Forms\\AddNewBook.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAkwCAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwBUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-14T03:14:28.869Z",
               "EditorCaption": ""
@@ -84,8 +83,7 @@
               "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs [Design]",
               "RelativeToolTip": "Forms\\AddNewBook.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T03:14:21.902Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-09-14T03:14:21.902Z"
             },
             {
               "$type": "Document",
@@ -109,8 +107,7 @@
               "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\ListBookSales.cs [Design]",
               "RelativeToolTip": "Forms\\ListBookSales.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T02:53:23.484Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-09-14T02:53:23.484Z"
             },
             {
               "$type": "Document",
@@ -121,8 +118,7 @@
               "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewAuthorOrPublisher.cs [Design]",
               "RelativeToolTip": "Forms\\AddNewAuthorOrPublisher.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T03:14:21.043Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-09-14T03:14:21.043Z"
             },
             {
               "$type": "Document",
@@ -134,8 +130,7 @@
               "RelativeToolTip": "Repositories\\Database.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAuwA4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T02:51:49.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T02:51:49.856Z"
             },
             {
               "$type": "Document",
@@ -147,8 +142,7 @@
               "RelativeToolTip": "Repositories\\AuthorRepository.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAkwCQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T02:50:10.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T02:50:10.83Z"
             },
             {
               "$type": "Document",
@@ -160,8 +154,7 @@
               "RelativeToolTip": "Repositories\\Auth.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAQwAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T02:49:35.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T02:49:35.111Z"
             }
           ]
         }
