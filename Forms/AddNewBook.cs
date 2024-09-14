@@ -96,7 +96,7 @@ namespace Book_Manager.Forms
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin~~");
                 return;
             }
-
+            if(bookSale==null) id = bookSaleRepository.GetNextId();
             if (File.Exists(imgPath) && imgPath != defaultImagePath)
             {
                 try
@@ -122,7 +122,6 @@ namespace Book_Manager.Forms
                     MessageBox.Show("Tiêu đề sách đã có trong cơ sở dữ liệu~~");
                     return;
                 }
-                id = bookSaleRepository.GetNextId();
                 bookSale = new BookSale
                 {
                     id = id,

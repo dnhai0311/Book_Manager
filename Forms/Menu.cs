@@ -41,7 +41,10 @@ namespace Book_Manager.Forms
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            var addNewBillForm = new AddNewBill();
+            addNewBillForm.Show();
+            this.Hide();
+            addNewBillForm.FormClosed += ListBookSalesForm_FormClosed;
         }
     }
 }

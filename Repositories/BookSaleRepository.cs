@@ -11,8 +11,13 @@ namespace Book_Manager.Repositories
     public class BookSaleRepository : IBookSaleRepository
     {
         BookSaleContext bookSaleContext { get; set; }
-        AuthorContext authorContext;
-        PublisherContext publisherContext;
+        AuthorContext? authorContext;
+        PublisherContext? publisherContext;
+
+        public BookSaleRepository(BookSaleContext bookSaleContext)
+        {
+            this.bookSaleContext = bookSaleContext;
+        }
         public BookSaleRepository(BookSaleContext bookSaleContext, AuthorContext authorContext, PublisherContext publisherContext)
         {
             this.bookSaleContext = bookSaleContext;

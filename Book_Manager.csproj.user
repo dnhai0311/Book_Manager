@@ -4,6 +4,9 @@
     <Compile Update="Forms\AddNewAuthorOrPublisher.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\AddNewBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\AddNewBook.cs">
       <SubType>Form</SubType>
     </Compile>

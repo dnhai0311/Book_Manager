@@ -84,5 +84,17 @@ namespace Book_Manager.Models
             return studentDiscount;
         }
 
+        public decimal NextDue(bool discount, bool studentDiscount)
+        {
+            decimal decNextDue = ExtendedPrice();
+            if (discount) { 
+            decNextDue -= Discount();
+            }
+            if (studentDiscount) { 
+            decNextDue -= StudentDiscount();
+            }
+            return decNextDue;
+        }
+
     }
 }
