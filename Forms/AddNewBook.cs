@@ -9,20 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unidecode.NET;
 
 namespace Book_Manager.Forms
 {
     public partial class AddNewBook : Form
     {
         string imgPath = string.Empty;
-        string id;
+        int id;
         BookSale? bookSale;
         BookSaleRepository bookSaleRepository;
 
         public delegate void BookAddedHandler(BookSale bookSale);
         public event BookAddedHandler? BookAdded;
 
-        string defaultImagePath = @"..\..\..\Images\default-book-img.jpg";
+        string defaultImagePath;
 
         public AddNewBook(AuthorContext authorContext, PublisherContext publisherContext, BookSaleRepository bookSaleRepository)
         {
@@ -30,22 +31,36 @@ namespace Book_Manager.Forms
             cbAuthor.DataSource = authorContext.GetAuthorNames();
             cbPublisher.DataSource = publisherContext.GetPublisherNames();
             this.bookSaleRepository = bookSaleRepository;
-            id = bookSaleRepository.SalesCount().ToString();
+            defaultImagePath = @"..\..\..\Images\default-book-img.jpg";
         }
 
-        public AddNewBook(AuthorContext authorContext, PublisherContext publisherContext, BookSaleRepository bookSaleRepository, string id)
+        public AddNewBook(AuthorContext authorContext, PublisherContext publisherContext, BookSaleRepository bookSaleRepository, BookSale bookSale)
         {
             InitializeComponent();
             cbAuthor.DataSource = authorContext.GetAuthorNames();
             cbPublisher.DataSource = publisherContext.GetPublisherNames();
             this.bookSaleRepository = bookSaleRepository;
-            this.id = id;
+            txtTitle.Text = bookSale.title;
+            txtPrice.Text = bookSale.price.ToString();
+            txtQuantity.Text = bookSale.quantity.ToString();
+            cbAuthor.SelectedIndex = bookSale.author;
+            cbPublisher.SelectedIndex = bookSale.publisher;
+            defaultImagePath = bookSale.image;
+
+            lbTitle.Text = "Cập nhật sách";
+            this.Text = "Cập nhật sách";
+            btnAddNew.Text = "Cập nhật";
+
+            txtTitle.SelectionStart = txtTitle.Text.Length;
+            txtTitle.SelectionLength = 0;
+
+            this.bookSale = bookSale;
+            id = bookSale.id;
         }
 
         private void AddNewBook_Load(object sender, EventArgs e)
         {
             pbImage.Image = Image.FromFile(defaultImagePath);
-            pbImage.SizeMode = PictureBoxSizeMode.CenterImage;
             imgPath = defaultImagePath;
         }
 
@@ -76,27 +91,17 @@ namespace Book_Manager.Forms
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            if (txtTitle.Text == "" || txtPrice.Text == "" || txtQuantity.Text == "")
+            if (txtTitle.Text.Trim() == "" || txtPrice.Text.Trim() == "" || txtQuantity.Text.Trim() == "")
             {
-                MessageBox.Show("Vui lòng nhập~~");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin~~");
                 return;
             }
-            bookSale = new BookSale
-            {
-                title = txtTitle.Text,
-                image = imgPath,
-                price = Convert.ToDecimal(txtPrice.Text),
-                quantity = Convert.ToInt32(txtQuantity.Text),
-                author = cbAuthor.SelectedIndex,
-                publisher = cbPublisher.SelectedIndex,
-            };
-            bookSaleRepository.AddSale(bookSale);
 
             if (File.Exists(imgPath) && imgPath != defaultImagePath)
             {
                 try
                 {
-                    string destFolder = Path.Combine(Application.StartupPath, @"..\..\..\Images\");
+                    string destFolder = Path.Combine(@"..\..\..\Images\");
                     string newFileName = id + Path.GetExtension(imgPath);
                     string newFilePath = Path.Combine(destFolder, newFileName);
 
@@ -109,9 +114,47 @@ namespace Book_Manager.Forms
                     return;
                 }
             }
+
+            if (bookSale == null) 
+            {
+                if (bookSaleRepository.ContainsTitle(txtTitle.Text.Trim()))
+                {
+                    MessageBox.Show("Tiêu đề sách đã có trong cơ sở dữ liệu~~");
+                    return;
+                }
+                id = bookSaleRepository.GetNextId();
+                bookSale = new BookSale
+                {
+                    id = id,
+                    title = txtTitle.Text.Trim(),
+                    image = imgPath,
+                    price = Convert.ToDecimal(txtPrice.Text),
+                    quantity = Convert.ToInt32(txtQuantity.Text),
+                    author = cbAuthor.SelectedIndex,
+                    publisher = cbPublisher.SelectedIndex,
+                };
+
+                bookSaleRepository.AddSale(bookSale);
+
+                MessageBox.Show("Thêm sách mới thành công!!");
+            }
+            else 
+            {
+                bookSale.title = txtTitle.Text.Trim();
+                bookSale.price = Convert.ToDecimal(txtPrice.Text);
+                bookSale.quantity = Convert.ToInt32(txtQuantity.Text);
+                bookSale.author = cbAuthor.SelectedIndex;
+                bookSale.publisher = cbPublisher.SelectedIndex;
+                bookSale.image = imgPath;
+
+                bookSaleRepository.UpdateSale(bookSale);
+
+                MessageBox.Show("Cập nhật thông tin sách thành công!!");
+            }
             BookAdded?.Invoke(bookSale);
-            MessageBox.Show("Thêm sách mới thành công!!");
+            bookSale = null;
         }
+
 
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {

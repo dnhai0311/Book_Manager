@@ -8,7 +8,15 @@ namespace Book_Manager.Models
 {
     public class Author
     {
-        public string? name { get; set; }
+        public string name { get; set; }
+        public Author()
+        {
+            name = string.Empty;
+        }
+        public Author(string name)
+        {
+            this.name = name;
+        }
     }
 
 }

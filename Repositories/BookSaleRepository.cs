@@ -22,25 +22,29 @@ namespace Book_Manager.Repositories
         public void AddSale(BookSale bookSale)
         {
             this.bookSaleContext.add(bookSale);
-            string query = "INSERT INTO booksales (title, image, price, quantity, author, publisher) " +
-                "VALUES (@title, @image, @price, @quantity, @author, @publisher)";
+            string query = "INSERT INTO booksales (id, title, image, price, quantity, author, publisher) " +
+                "VALUES (@id ,@title, @image, @price, @quantity, @author, @publisher);"; 
+
+
 
             if (!Database.Open()) return;
 
             using (MySqlCommand command = new MySqlCommand(query, Database.con))
             {
+                command.Parameters.AddWithValue("@id", bookSale.id);
                 command.Parameters.AddWithValue("@title", bookSale.title);
                 command.Parameters.AddWithValue("@image", bookSale.image);
                 command.Parameters.AddWithValue("@price", bookSale.price);
                 command.Parameters.AddWithValue("@quantity", bookSale.quantity);
                 command.Parameters.AddWithValue("@author", bookSale.author);
                 command.Parameters.AddWithValue("@publisher", bookSale.publisher);
-
                 command.ExecuteNonQuery();
             }
 
             Database.Close();
+ 
         }
+
         public decimal SalesTotal()
         {
             return this.bookSaleContext.getSalesTotal();
@@ -65,6 +69,7 @@ namespace Book_Manager.Repositories
                         {
                             var bookSale = new BookSale
                             {
+                                id = reader.GetInt32("id"),
                                 title = reader.GetString("title"),
                                 image = reader.GetString("image"),
                                 price = reader.GetDecimal("price"),
@@ -72,7 +77,7 @@ namespace Book_Manager.Repositories
                                 author = reader.GetInt32("author"),
                                 publisher = reader.GetInt32("publisher")
 
-                            };
+                            }; 
                             bookSales.Add(bookSale);
                         }
                     }
@@ -115,6 +120,7 @@ namespace Book_Manager.Repositories
                         {
                             bookSale = new BookSale
                             {
+                                id = reader.GetInt32("id"),
                                 title = reader.GetString("title"),
                                 image = reader.GetString("image"),
                                 price = reader.GetDecimal("price"),
@@ -133,6 +139,73 @@ namespace Book_Manager.Repositories
 
             return bookSale;
         }
+
+        public bool ContainsTitle(string title)
+        {
+            return bookSaleContext.ContainsTitle(title);
+        }
+
+        public void UpdateSale(BookSale bookSale)
+        {
+            bookSaleContext.update(bookSale);
+            string query = "UPDATE booksales SET title = @title, image = @image, price = @price, quantity = @quantity, " +
+                           "author = @author, publisher = @publisher WHERE id = @id";
+
+            if (!Database.Open()) return;
+
+            using (MySqlCommand command = new MySqlCommand(query, Database.con))
+            {
+                command.Parameters.AddWithValue("@id", bookSale.id);
+                command.Parameters.AddWithValue("@title", bookSale.title);
+                command.Parameters.AddWithValue("@image", bookSale.image);
+                command.Parameters.AddWithValue("@price", bookSale.price);
+                command.Parameters.AddWithValue("@quantity", bookSale.quantity);
+                command.Parameters.AddWithValue("@author", bookSale.author);
+                command.Parameters.AddWithValue("@publisher", bookSale.publisher);
+
+                command.ExecuteNonQuery();
+            }
+
+            Database.Close();
+        }
+
+        public void DeleteSale(BookSale bookSale)
+        {
+            string query = "DELETE FROM booksales WHERE id = @id";
+
+            if (!Database.Open()) return;
+
+            using (MySqlCommand command = new MySqlCommand(query, Database.con))
+            {
+                command.Parameters.AddWithValue("@id", bookSale.id);
+
+                command.ExecuteNonQuery();
+            }
+
+            Database.Close();
+        }
+
+        public int GetNextId()
+        {
+            string query = "SELECT MAX(id) + 1 FROM booksales";
+
+            int nextId = 1; 
+
+            if (!Database.Open()) return nextId;
+
+            using (MySqlCommand command = new MySqlCommand(query, Database.con))
+            {
+                object result = command.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    nextId = Convert.ToInt32(result);
+                }
+            }
+
+            Database.Close();
+            return nextId;
+        }
+
 
     }
 }

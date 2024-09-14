@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            lbTitle = new Label();
             txtTitle = new TextBox();
             pbImage = new PictureBox();
             btnChangeImg = new Button();
@@ -45,15 +45,15 @@
             ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // lbTitle
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(242, 27);
-            label1.Name = "label1";
-            label1.Size = new Size(216, 38);
-            label1.TabIndex = 0;
-            label1.Text = "Thêm sách mới";
+            lbTitle.AutoSize = true;
+            lbTitle.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTitle.Location = new Point(242, 27);
+            lbTitle.Name = "lbTitle";
+            lbTitle.Size = new Size(216, 38);
+            lbTitle.TabIndex = 0;
+            lbTitle.Text = "Thêm sách mới";
             // 
             // txtTitle
             // 
@@ -67,6 +67,7 @@
             pbImage.Location = new Point(39, 122);
             pbImage.Name = "pbImage";
             pbImage.Size = new Size(217, 263);
+            pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
             pbImage.TabIndex = 2;
             pbImage.TabStop = false;
             // 
@@ -187,7 +188,7 @@
             Controls.Add(label3);
             Controls.Add(txtTitle);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lbTitle);
             Name = "AddNewBook";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Thêm sách mới";
@@ -199,7 +200,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label lbTitle;
         private TextBox txtTitle;
         private PictureBox pbImage;
         private Button btnChangeImg;

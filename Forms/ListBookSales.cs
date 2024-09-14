@@ -55,10 +55,9 @@ namespace Book_Manager.Forms
 
         private void SáchMớiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var addNewBookForm = new AddNewBook(authorContext, publisherContext, bookSaleRepository, String.Empty);
+            var addNewBookForm = new AddNewBook(authorContext, publisherContext, bookSaleRepository);
             addNewBookForm.BookAdded += OnBookAdded;
             addNewBookForm.ShowDialog();
-
         }
 
         private void TácGiảMớiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,14 +89,13 @@ namespace Book_Manager.Forms
 
             bookSaleRepository.UpdateRepositoryWithAllBookSales();
             dgvListBookSales.Rows.Clear();
-            int id = 1;
 
             foreach (var bookSale in bookSaleContext.BookSales)
             {
                 Image img = Image.FromFile(bookSale.image);
 
                 dgvListBookSales.Rows.Add(
-                    id,
+                    bookSale.id,
                     bookSale.title,
                     img,
                     bookSale.price.ToString("C"),
@@ -105,18 +103,15 @@ namespace Book_Manager.Forms
                     authorContext.Authors[bookSale.author].name,
                     publisherContext.Publishers[bookSale.publisher].name
                 );
-
-                id++;
             }
 
         }
 
         private void OnBookAdded(BookSale bookSale)
         {
-            int id = (int)bookSaleRepository.SalesCount() - 1;
             Image img = Image.FromFile(bookSale.image);
             dgvListBookSales.Rows.Add(
-                id,
+                bookSale.id,
                 bookSale.title,
                 img,
                 bookSale.price.ToString("C"),
@@ -124,6 +119,22 @@ namespace Book_Manager.Forms
                 authorContext.Authors[bookSale.author].name,
                 publisherContext.Publishers[bookSale.publisher].name
             );
+        }
+        private void OnBookUpdated(BookSale bookSale)
+        {
+            foreach (DataGridViewRow row in dgvListBookSales.Rows)
+            {
+                if ((int)row.Cells[0].Value == bookSale.id) 
+                {
+                    row.Cells[1].Value = bookSale.title; 
+                    row.Cells[2].Value = Image.FromFile(bookSale.image);
+                    row.Cells[3].Value = bookSale.price.ToString("C");
+                    row.Cells[4].Value = bookSale.quantity;
+                    row.Cells[5].Value = authorContext.Authors[bookSale.author].name;
+                    row.Cells[6].Value = publisherContext.Publishers[bookSale.publisher].name; 
+                    break;
+                }
+            }
         }
         private void SearchBooks(string searchTerm)
         {
@@ -173,11 +184,42 @@ namespace Book_Manager.Forms
 
         private void dgvListBookSales_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvListBookSales.Columns["modify"].Index && e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                string title = dgvListBookSales.Rows[e.RowIndex].Cells["title"].Value.ToString() ?? string.Empty;
-                var bookSale = bookSaleRepository.GetBookSaleByTitle(title);
+                if (e.ColumnIndex == dgvListBookSales.Columns["modify"].Index)
+                {
+                    string title = dgvListBookSales.Rows[e.RowIndex].Cells["title"].Value.ToString() ?? string.Empty;
+                    var bookSale = bookSaleRepository.GetBookSaleByTitle(title);
+                    var addModifyBookForm = new AddNewBook(authorContext, publisherContext, bookSaleRepository, bookSale);
+                    addModifyBookForm.BookAdded += OnBookUpdated;
+                    addModifyBookForm.ShowDialog();
+                }
+
+                else if (e.ColumnIndex == dgvListBookSales.Columns["delete"].Index)
+                {
+                    string title = dgvListBookSales.Rows[e.RowIndex].Cells["title"].Value.ToString() ?? string.Empty;
+                    var bookSale = bookSaleRepository.GetBookSaleByTitle(title);
+
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Xác nhận xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.OK)
+                    {
+                        bookSaleRepository.DeleteSale(bookSale);
+                        MessageBox.Show("Xóa thành công!");
+
+                        OnBookDeleted(bookSale);
+                    }
+                }
             }
         }
+        private void OnBookDeleted(BookSale bookSale)
+        {
+            dgvListBookSales.Rows.RemoveAt(dgvListBookSales.Rows
+                .Cast<DataGridViewRow>()
+                .Where(row => (int)row.Cells[0].Value == bookSale.id)
+                .Select(row => row.Index)
+                .FirstOrDefault());
+        }
+
     }
 }

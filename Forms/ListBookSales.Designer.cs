@@ -30,15 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             dgvListBookSales = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            name = new DataGridViewTextBoxColumn();
-            img = new DataGridViewImageColumn();
-            price = new DataGridViewTextBoxColumn();
-            quantity = new DataGridViewTextBoxColumn();
-            author = new DataGridViewTextBoxColumn();
-            publisher = new DataGridViewTextBoxColumn();
-            modify = new DataGridViewButtonColumn();
-            delete = new DataGridViewButtonColumn();
             label1 = new Label();
             txtSearch = new TextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
@@ -54,6 +45,15 @@
             danhSáchTácGiảToolStripMenuItem = new ToolStripMenuItem();
             danhSáchNhàXuấtBảnToolStripMenuItem = new ToolStripMenuItem();
             quayLạiToolStripMenuItem = new ToolStripMenuItem();
+            id = new DataGridViewTextBoxColumn();
+            title = new DataGridViewTextBoxColumn();
+            img = new DataGridViewImageColumn();
+            price = new DataGridViewTextBoxColumn();
+            quantity = new DataGridViewTextBoxColumn();
+            author = new DataGridViewTextBoxColumn();
+            publisher = new DataGridViewTextBoxColumn();
+            modify = new DataGridViewButtonColumn();
+            delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvListBookSales).BeginInit();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -63,80 +63,12 @@
             // 
             dgvListBookSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListBookSales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListBookSales.Columns.AddRange(new DataGridViewColumn[] { id, name, img, price, quantity, author, publisher, modify, delete });
+            dgvListBookSales.Columns.AddRange(new DataGridViewColumn[] { id, title, img, price, quantity, author, publisher, modify, delete });
             dgvListBookSales.Location = new Point(12, 102);
             dgvListBookSales.Name = "dgvListBookSales";
             dgvListBookSales.RowHeadersWidth = 51;
             dgvListBookSales.Size = new Size(1317, 587);
             dgvListBookSales.TabIndex = 1;
-            // 
-            // id
-            // 
-            id.HeaderText = "STT";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            id.ReadOnly = true;
-            // 
-            // name
-            // 
-            name.HeaderText = "Tên sách";
-            name.MinimumWidth = 6;
-            name.Name = "name";
-            name.ReadOnly = true;
-            // 
-            // img
-            // 
-            img.HeaderText = "Hình ảnh";
-            img.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            img.MinimumWidth = 6;
-            img.Name = "img";
-            img.ReadOnly = true;
-            // 
-            // price
-            // 
-            price.HeaderText = "Giá";
-            price.MinimumWidth = 6;
-            price.Name = "price";
-            price.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            quantity.HeaderText = "Số lượng";
-            quantity.MinimumWidth = 6;
-            quantity.Name = "quantity";
-            quantity.ReadOnly = true;
-            // 
-            // author
-            // 
-            author.HeaderText = "Tác giả";
-            author.MinimumWidth = 6;
-            author.Name = "author";
-            author.ReadOnly = true;
-            author.Resizable = DataGridViewTriState.True;
-            // 
-            // publisher
-            // 
-            publisher.HeaderText = "Nhà xuất bản";
-            publisher.MinimumWidth = 6;
-            publisher.Name = "publisher";
-            publisher.ReadOnly = true;
-            publisher.Resizable = DataGridViewTriState.True;
-            // 
-            // modify
-            // 
-            modify.HeaderText = "";
-            modify.MinimumWidth = 6;
-            modify.Name = "modify";
-            modify.Text = "Sửa";
-            modify.UseColumnTextForButtonValue = true;
-            // 
-            // delete
-            // 
-            delete.HeaderText = "";
-            delete.MinimumWidth = 6;
-            delete.Name = "delete";
-            delete.Text = "Xóa";
-            delete.UseColumnTextForButtonValue = true;
             // 
             // label1
             // 
@@ -246,6 +178,74 @@
             quayLạiToolStripMenuItem.Text = "Quay lại";
             quayLạiToolStripMenuItem.Click += quayLạiToolStripMenuItem_Click;
             // 
+            // id
+            // 
+            id.HeaderText = "Mã ID";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.ReadOnly = true;
+            // 
+            // title
+            // 
+            title.HeaderText = "Tên sách";
+            title.MinimumWidth = 6;
+            title.Name = "title";
+            title.ReadOnly = true;
+            // 
+            // img
+            // 
+            img.HeaderText = "Hình ảnh";
+            img.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            img.MinimumWidth = 6;
+            img.Name = "img";
+            img.ReadOnly = true;
+            // 
+            // price
+            // 
+            price.HeaderText = "Giá";
+            price.MinimumWidth = 6;
+            price.Name = "price";
+            price.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            quantity.HeaderText = "Số lượng";
+            quantity.MinimumWidth = 6;
+            quantity.Name = "quantity";
+            quantity.ReadOnly = true;
+            // 
+            // author
+            // 
+            author.HeaderText = "Tác giả";
+            author.MinimumWidth = 6;
+            author.Name = "author";
+            author.ReadOnly = true;
+            author.Resizable = DataGridViewTriState.True;
+            // 
+            // publisher
+            // 
+            publisher.HeaderText = "Nhà xuất bản";
+            publisher.MinimumWidth = 6;
+            publisher.Name = "publisher";
+            publisher.ReadOnly = true;
+            publisher.Resizable = DataGridViewTriState.True;
+            // 
+            // modify
+            // 
+            modify.HeaderText = "";
+            modify.MinimumWidth = 6;
+            modify.Name = "modify";
+            modify.Text = "Sửa";
+            modify.UseColumnTextForButtonValue = true;
+            // 
+            // delete
+            // 
+            delete.HeaderText = "";
+            delete.MinimumWidth = 6;
+            delete.Name = "delete";
+            delete.Text = "Xóa";
+            delete.UseColumnTextForButtonValue = true;
+            // 
             // ListBookSales
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -287,7 +287,7 @@
         private ToolStripMenuItem danhSáchNhàXuấtBảnToolStripMenuItem;
         private ToolStripMenuItem quayLạiToolStripMenuItem;
         private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn title;
         private DataGridViewImageColumn img;
         private DataGridViewTextBoxColumn price;
         private DataGridViewTextBoxColumn quantity;

@@ -69,5 +69,10 @@ namespace Book_Manager.Repositories
             publisherContext.Publishers.Clear();
             publisherContext.Publishers.AddRange(publishersFromDb);
         }
+
+        public bool ContainsName(string name)
+        {
+            return publisherContext.ContainsName(name);
+        }
     }
 }

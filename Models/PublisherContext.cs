@@ -32,5 +32,10 @@ namespace Book_Manager.Models
 
             return publisherNames;
         }
+
+        public bool ContainsName(string name)
+        {
+            return Publishers.Any(publisher => publisher.name.Equals(name, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }

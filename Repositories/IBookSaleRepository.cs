@@ -14,5 +14,10 @@ namespace Book_Manager.Repositories
         void UpdateRepositoryWithAllBookSales();
         decimal SalesTotal();
         decimal SalesCount();
+        BookSale GetBookSaleByTitle(string title);
+        public bool ContainsTitle(string title);
+        public void UpdateSale(BookSale bookSale);
+        public void DeleteSale(BookSale bookSale);
+        public int GetNextId();
     }
 }

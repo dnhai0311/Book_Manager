@@ -8,6 +8,7 @@ namespace Book_Manager.Models
 {
     public class BookSale
     {
+        int intId;
         string strTitle;
         string strImage;
         int intAuthor;
@@ -17,12 +18,19 @@ namespace Book_Manager.Models
 
         public BookSale()
         {
+            intId = -1;
             strTitle = string.Empty;
             intQuantity = 0;
             decPrice = 0;
             strImage = string.Empty;
-            intAuthor = 0;
-            intPublisher = 0;
+            intAuthor = -1;
+            intPublisher = -1;
+        }
+
+        public int id
+        {
+            get { return intId; }
+            set { intId = value; }
         }
 
         public string title

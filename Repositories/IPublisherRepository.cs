@@ -12,5 +12,6 @@ namespace Book_Manager.Repositories
         void AddPublisher(Publisher publisher);
         List<Publisher> GetAllPublishers();
         void UpdateRepositoryWithAllPublishers();
+        public bool ContainsName(string name);
     }
 }

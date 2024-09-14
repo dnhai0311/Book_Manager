@@ -12,5 +12,6 @@ namespace Book_Manager.Repositories
         void AddAuthor(Author author);
         List<Author> GetAllAuthors();
         void UpdateRepositoryWithAllAuthors();
+        public bool ContainsName(string name);
     }
 }

@@ -33,5 +33,24 @@ namespace Book_Manager.Models
         {
             return BookSales.Count();
         }
+
+        public bool ContainsTitle(string title)
+        {
+            return BookSales.Any(bookSale => bookSale.title.Equals(title, StringComparison.OrdinalIgnoreCase));
+        }
+        public void update(BookSale updatedBookSale)
+        {
+            var existingBookSale = BookSales.FirstOrDefault(bookSale => bookSale.id == updatedBookSale.id);
+
+            if (existingBookSale != null)
+            {
+                existingBookSale.title = updatedBookSale.title;
+                existingBookSale.image = updatedBookSale.image;
+                existingBookSale.author = updatedBookSale.author;
+                existingBookSale.publisher = updatedBookSale.publisher;
+                existingBookSale.quantity = updatedBookSale.quantity;
+                existingBookSale.price = updatedBookSale.price;
+            }
+        }
     }
 }

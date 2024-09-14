@@ -8,7 +8,15 @@ namespace Book_Manager.Models
 {
     public class Publisher
     {
-        public string? name { get; set; }
+        public string name { get; set; }
+        public Publisher()
+        {
+            name = string.Empty;
+        }
+        public Publisher(string name)
+        {
+            this.name = name;
+        }
 
     }
 }

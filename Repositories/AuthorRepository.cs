@@ -67,5 +67,10 @@ namespace Book_Manager.Repositories
             authorContext.Authors.Clear();
             authorContext.Authors.AddRange(authorsFromDb);
         }
+
+        public bool ContainsName(string name)
+        {
+            return authorContext.ContainsName(name);
+        }
     }
 }
