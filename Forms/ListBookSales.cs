@@ -122,18 +122,18 @@ namespace Book_Manager.Forms
         }
         private void OnBookUpdated(BookSale bookSale)
         {
-            foreach (DataGridViewRow row in dgvListBookSales.Rows)
+            var row = dgvListBookSales.Rows
+            .Cast<DataGridViewRow>()
+            .FirstOrDefault(r => (int)r.Cells[0].Value == bookSale.id);
+
+            if (row != null)
             {
-                if ((int)row.Cells[0].Value == bookSale.id) 
-                {
-                    row.Cells[1].Value = bookSale.title; 
-                    row.Cells[2].Value = Image.FromFile(bookSale.image);
-                    row.Cells[3].Value = bookSale.price.ToString("C");
-                    row.Cells[4].Value = bookSale.quantity;
-                    row.Cells[5].Value = authorContext.Authors[bookSale.author].name;
-                    row.Cells[6].Value = publisherContext.Publishers[bookSale.publisher].name; 
-                    break;
-                }
+                row.Cells[1].Value = bookSale.title;
+                row.Cells[2].Value = Image.FromFile(bookSale.image);
+                row.Cells[3].Value = bookSale.price.ToString("C");
+                row.Cells[4].Value = bookSale.quantity;
+                row.Cells[5].Value = authorContext.Authors[bookSale.author].name;
+                row.Cells[6].Value = publisherContext.Publishers[bookSale.publisher].name;
             }
         }
         private void SearchBooks(string searchTerm)

@@ -9,7 +9,7 @@ namespace Book_Manager.Repositories
 {
     public interface IBookSaleRepository
     {
-        void AddSale(BookSale bookSale);
+        void AddSale(BookSale bookSale, bool isAddedDB);
         List<BookSale> GetAllBookSales();
         void UpdateRepositoryWithAllBookSales();
         decimal SalesTotal();

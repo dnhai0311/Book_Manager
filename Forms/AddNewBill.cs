@@ -14,15 +14,27 @@ namespace Book_Manager.Forms
 {
     public partial class AddNewBill : Form
     {
+        int count;
+        decimal total;
+
         BookSaleContext bookSaleContext;
+        BookSaleContext billContext;
+
         BookSaleRepository bookSaleRepository;
+        BookSaleRepository billRepository;
+
         BookSale selectedBookSale;
         BookSale bill;
         public AddNewBill()
         {
             InitializeComponent();
+
+            count = 0;
+            total = 0;
             bookSaleContext = new BookSaleContext();
+            billContext = new BookSaleContext();
             bookSaleRepository = new BookSaleRepository(bookSaleContext);
+            billRepository = new BookSaleRepository(billContext);
             selectedBookSale = new BookSale();
             bill = new BookSale();
         }
@@ -31,6 +43,7 @@ namespace Book_Manager.Forms
         {
             bookSaleRepository.UpdateRepositoryWithAllBookSales();
             var bookSales = bookSaleContext.BookSales;
+            btnAdd.Enabled = false;
             cbTitle.Items.Clear();
             foreach (var bookSale in bookSales)
             {
@@ -68,6 +81,7 @@ namespace Book_Manager.Forms
             }
             cbDiscount.Enabled = true;
             cbStudentDiscount.Enabled = true;
+            btnAdd.Enabled = true;
             BookSale bookSale = new BookSale
             {
                 quantity = Convert.ToInt32(txtQuantity.Text),
@@ -77,7 +91,6 @@ namespace Book_Manager.Forms
             bill = bookSale;
 
             txtExtendedPrice.Text = bookSale.ExtendedPrice().ToString("C");
-            txtDiscount.Text = bookSale.Discount().ToString("C");
             UpdateNextDue();
         }
 
@@ -91,22 +104,8 @@ namespace Book_Manager.Forms
 
         private void UpdateNextDue()
         {
-            if (cbDiscount.Checked && cbStudentDiscount.Checked)
-            {
-                lbNextDue.Text = bill.NextDue(true, true).ToString("C");
-            }
-            else if (cbDiscount.Checked && !cbStudentDiscount.Checked)
-            {
-                lbNextDue.Text = bill.NextDue(true, false).ToString("C");
-            }
-            else if (!cbDiscount.Checked && cbStudentDiscount.Checked)
-            {
-                lbNextDue.Text = bill.NextDue(false, true).ToString("C");
-            }
-            else
-            {
-                lbNextDue.Text = bill.NextDue(false, false).ToString("C");
-            }
+            txtDiscount.Text = bill.TotalDiscount(cbDiscount.Checked, cbStudentDiscount.Checked).ToString("C");
+            lbNextDue.Text = bill.NextDue(cbDiscount.Checked, cbStudentDiscount.Checked).ToString("C");
         }
 
         private void cbDiscount_CheckedChanged(object sender, EventArgs e)
@@ -122,6 +121,7 @@ namespace Book_Manager.Forms
             lbNextDue.Text = string.Empty;
             cbDiscount.Enabled = false;
             cbStudentDiscount.Enabled = false;
+            btnAdd.Enabled = false;
         }
 
         private void tạoMớiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,6 +137,22 @@ namespace Book_Manager.Forms
         private void quayLạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            billRepository.AddSale(bill, false);
+            dgvBill.Rows.Add(
+                count + 1,
+                cbTitle.Text,
+                txtQuantity.Text,
+                txtPrice.Text,
+                txtDiscount.Text,
+                lbNextDue.Text
+            );
+            count++;
+            total += bill.NextDue(cbDiscount.Checked, cbStudentDiscount.Checked);
+            lbTotal.Text = total.ToString("C");
         }
     }
 }

@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            menuStrip1 = new MenuStrip();
-            fileToolStripMenuItem = new ToolStripMenuItem();
-            tạoMớiToolStripMenuItem = new ToolStripMenuItem();
-            tínhToánToolStripMenuItem = new ToolStripMenuItem();
-            quayLạiToolStripMenuItem = new ToolStripMenuItem();
             groupBox1 = new GroupBox();
             lbQuantity = new Label();
             txtDiscount = new TextBox();
@@ -46,59 +41,38 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            lbNextDue = new Label();
             cbDiscount = new CheckBox();
             cbStudentDiscount = new CheckBox();
-            menuStrip1.SuspendLayout();
+            dgvBill = new DataGridView();
+            btnAdd = new Button();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            tạoMớiToolStripMenuItem = new ToolStripMenuItem();
+            inHóaĐơnToolStripMenuItem = new ToolStripMenuItem();
+            qToolStripMenuItem = new ToolStripMenuItem();
+            lbNextDue = new Label();
+            label7 = new Label();
+            lbTotal = new Label();
+            STT = new DataGridViewTextBoxColumn();
+            Title = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            Discount = new DataGridViewTextBoxColumn();
+            NextDue = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBill).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(425, 290);
+            label1.Location = new Point(425, 289);
             label1.Name = "label1";
             label1.Size = new Size(151, 38);
             label1.TabIndex = 0;
             label1.Text = "Tổng tiền:";
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, quayLạiToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(732, 28);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tạoMớiToolStripMenuItem, tínhToánToolStripMenuItem });
-            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(46, 24);
-            fileToolStripMenuItem.Text = "File";
-            // 
-            // tạoMớiToolStripMenuItem
-            // 
-            tạoMớiToolStripMenuItem.Name = "tạoMớiToolStripMenuItem";
-            tạoMớiToolStripMenuItem.Size = new Size(163, 26);
-            tạoMớiToolStripMenuItem.Text = "Tạo mới";
-            tạoMớiToolStripMenuItem.Click += tạoMớiToolStripMenuItem_Click;
-            // 
-            // tínhToánToolStripMenuItem
-            // 
-            tínhToánToolStripMenuItem.Name = "tínhToánToolStripMenuItem";
-            tínhToánToolStripMenuItem.Size = new Size(163, 26);
-            tínhToánToolStripMenuItem.Text = "In hóa đơn";
-            // 
-            // quayLạiToolStripMenuItem
-            // 
-            quayLạiToolStripMenuItem.Name = "quayLạiToolStripMenuItem";
-            quayLạiToolStripMenuItem.Size = new Size(77, 24);
-            quayLạiToolStripMenuItem.Text = "Quay lại";
-            quayLạiToolStripMenuItem.Click += quayLạiToolStripMenuItem_Click;
             // 
             // groupBox1
             // 
@@ -218,15 +192,6 @@
             label2.TabIndex = 3;
             label2.Text = "Tiêu đề";
             // 
-            // lbNextDue
-            // 
-            lbNextDue.AutoSize = true;
-            lbNextDue.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbNextDue.Location = new Point(564, 297);
-            lbNextDue.Name = "lbNextDue";
-            lbNextDue.Size = new Size(0, 31);
-            lbNextDue.TabIndex = 0;
-            // 
             // cbDiscount
             // 
             cbDiscount.AutoSize = true;
@@ -251,15 +216,144 @@
             cbStudentDiscount.UseVisualStyleBackColor = true;
             cbStudentDiscount.CheckedChanged += cbDiscount_CheckedChanged;
             // 
+            // dgvBill
+            // 
+            dgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBill.Columns.AddRange(new DataGridViewColumn[] { STT, Title, Quantity, Price, Discount, NextDue });
+            dgvBill.Location = new Point(12, 355);
+            dgvBill.Name = "dgvBill";
+            dgvBill.RowHeadersWidth = 51;
+            dgvBill.Size = new Size(708, 188);
+            dgvBill.TabIndex = 4;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(425, 129);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(94, 29);
+            btnAdd.TabIndex = 5;
+            btnAdd.Text = "Thêm vào hóa đơn";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, qToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(732, 28);
+            menuStrip1.TabIndex = 6;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tạoMớiToolStripMenuItem, inHóaĐơnToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(46, 24);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // tạoMớiToolStripMenuItem
+            // 
+            tạoMớiToolStripMenuItem.Name = "tạoMớiToolStripMenuItem";
+            tạoMớiToolStripMenuItem.Size = new Size(163, 26);
+            tạoMớiToolStripMenuItem.Text = "Tạo mới";
+            tạoMớiToolStripMenuItem.Click += tạoMớiToolStripMenuItem_Click;
+            // 
+            // inHóaĐơnToolStripMenuItem
+            // 
+            inHóaĐơnToolStripMenuItem.Name = "inHóaĐơnToolStripMenuItem";
+            inHóaĐơnToolStripMenuItem.Size = new Size(163, 26);
+            inHóaĐơnToolStripMenuItem.Text = "In hóa đơn";
+            // 
+            // qToolStripMenuItem
+            // 
+            qToolStripMenuItem.Name = "qToolStripMenuItem";
+            qToolStripMenuItem.Size = new Size(77, 24);
+            qToolStripMenuItem.Text = "Quay lại";
+            qToolStripMenuItem.Click += quayLạiToolStripMenuItem_Click;
+            // 
+            // lbNextDue
+            // 
+            lbNextDue.AutoSize = true;
+            lbNextDue.Location = new Point(496, 268);
+            lbNextDue.Name = "lbNextDue";
+            lbNextDue.Size = new Size(0, 20);
+            lbNextDue.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(425, 261);
+            label7.Name = "label7";
+            label7.Size = new Size(65, 28);
+            label7.TabIndex = 0;
+            label7.Text = "Tổng:";
+            // 
+            // lbTotal
+            // 
+            lbTotal.AutoSize = true;
+            lbTotal.Location = new Point(582, 303);
+            lbTotal.Name = "lbTotal";
+            lbTotal.Size = new Size(0, 20);
+            lbTotal.TabIndex = 7;
+            // 
+            // STT
+            // 
+            STT.HeaderText = "STT";
+            STT.MinimumWidth = 6;
+            STT.Name = "STT";
+            STT.ReadOnly = true;
+            // 
+            // Title
+            // 
+            Title.HeaderText = "Tên sách";
+            Title.MinimumWidth = 6;
+            Title.Name = "Title";
+            Title.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.HeaderText = "Số lượng";
+            Quantity.MinimumWidth = 6;
+            Quantity.Name = "Quantity";
+            // 
+            // Price
+            // 
+            Price.HeaderText = "Giá";
+            Price.MinimumWidth = 6;
+            Price.Name = "Price";
+            Price.ReadOnly = true;
+            // 
+            // Discount
+            // 
+            Discount.HeaderText = "Giảm";
+            Discount.MinimumWidth = 6;
+            Discount.Name = "Discount";
+            Discount.ReadOnly = true;
+            // 
+            // NextDue
+            // 
+            NextDue.HeaderText = "Tổng";
+            NextDue.MinimumWidth = 6;
+            NextDue.Name = "NextDue";
+            NextDue.ReadOnly = true;
+            // 
             // AddNewBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(732, 350);
+            ClientSize = new Size(732, 555);
+            Controls.Add(lbTotal);
+            Controls.Add(lbNextDue);
+            Controls.Add(btnAdd);
+            Controls.Add(dgvBill);
             Controls.Add(cbStudentDiscount);
             Controls.Add(cbDiscount);
             Controls.Add(groupBox1);
-            Controls.Add(lbNextDue);
+            Controls.Add(label7);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -267,10 +361,11 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tạo hóa đơn";
             Load += AddNewBill_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBill).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -278,11 +373,6 @@
         #endregion
 
         private Label label1;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem tạoMớiToolStripMenuItem;
-        private ToolStripMenuItem tínhToánToolStripMenuItem;
-        private ToolStripMenuItem quayLạiToolStripMenuItem;
         private GroupBox groupBox1;
         private Label label2;
         private TextBox txtDiscount;
@@ -294,9 +384,24 @@
         private Label label5;
         private Label label4;
         private Label label3;
-        private Label lbNextDue;
         private Label lbQuantity;
         private CheckBox cbDiscount;
         private CheckBox cbStudentDiscount;
+        private DataGridView dgvBill;
+        private Button btnAdd;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem tạoMớiToolStripMenuItem;
+        private ToolStripMenuItem inHóaĐơnToolStripMenuItem;
+        private ToolStripMenuItem qToolStripMenuItem;
+        private Label lbNextDue;
+        private Label label7;
+        private Label lbTotal;
+        private DataGridViewTextBoxColumn STT;
+        private DataGridViewTextBoxColumn Title;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn Discount;
+        private DataGridViewTextBoxColumn NextDue;
     }
 }

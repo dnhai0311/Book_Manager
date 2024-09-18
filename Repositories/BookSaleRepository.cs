@@ -24,30 +24,32 @@ namespace Book_Manager.Repositories
             this.authorContext = authorContext;
             this.publisherContext = publisherContext;
         }
-        public void AddSale(BookSale bookSale)
+        public void AddSale(BookSale bookSale, bool isAddedDB)
         {
             this.bookSaleContext.add(bookSale);
-            string query = "INSERT INTO booksales (id, title, image, price, quantity, author, publisher) " +
-                "VALUES (@id ,@title, @image, @price, @quantity, @author, @publisher);"; 
 
-
-
-            if (!Database.Open()) return;
-
-            using (MySqlCommand command = new MySqlCommand(query, Database.con))
+            if (isAddedDB)
             {
-                command.Parameters.AddWithValue("@id", bookSale.id);
-                command.Parameters.AddWithValue("@title", bookSale.title);
-                command.Parameters.AddWithValue("@image", bookSale.image);
-                command.Parameters.AddWithValue("@price", bookSale.price);
-                command.Parameters.AddWithValue("@quantity", bookSale.quantity);
-                command.Parameters.AddWithValue("@author", bookSale.author);
-                command.Parameters.AddWithValue("@publisher", bookSale.publisher);
-                command.ExecuteNonQuery();
+                string query = "INSERT INTO booksales (id, title, image, price, quantity, author, publisher) " +
+                    "VALUES (@id ,@title, @image, @price, @quantity, @author, @publisher);";
+
+                if (!Database.Open()) return;
+
+                using (MySqlCommand command = new MySqlCommand(query, Database.con))
+                {
+                    command.Parameters.AddWithValue("@id", bookSale.id);
+                    command.Parameters.AddWithValue("@title", bookSale.title);
+                    command.Parameters.AddWithValue("@image", bookSale.image);
+                    command.Parameters.AddWithValue("@price", bookSale.price);
+                    command.Parameters.AddWithValue("@quantity", bookSale.quantity);
+                    command.Parameters.AddWithValue("@author", bookSale.author);
+                    command.Parameters.AddWithValue("@publisher", bookSale.publisher);
+                    command.ExecuteNonQuery();
+                }
+
+                Database.Close();
             }
 
-            Database.Close();
- 
         }
 
         public decimal SalesTotal()
@@ -82,7 +84,7 @@ namespace Book_Manager.Repositories
                                 author = reader.GetInt32("author"),
                                 publisher = reader.GetInt32("publisher")
 
-                            }; 
+                            };
                             bookSales.Add(bookSale);
                         }
                     }
@@ -194,7 +196,7 @@ namespace Book_Manager.Repositories
         {
             string query = "SELECT MAX(id) + 1 FROM booksales";
 
-            int nextId = 1; 
+            int nextId = 1;
 
             if (!Database.Open()) return nextId;
 

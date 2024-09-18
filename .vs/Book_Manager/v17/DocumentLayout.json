@@ -7,16 +7,40 @@
       "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|D:\\Codes\\Book_Manager\\forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\models\\booksale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:models\\booksale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|D:\\Codes\\Book_Manager\\forms\\addnewbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\listbooksales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\repositories\\booksalerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:repositories\\booksalerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\repositories\\ibooksalerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:repositories\\ibooksalerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|d:\\codes\\book_manager\\forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2AA05EBC-D7BE-4697-953A-003402CA99D5}|Book_Manager.csproj|solutionrelative:forms\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AddNewBill.cs [Design]",
               "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewBill.cs",
               "RelativeDocumentMoniker": "Forms\\AddNewBill.cs",
@@ -43,20 +67,97 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddNewBook.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs",
+              "RelativeDocumentMoniker": "Forms\\AddNewBook.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs",
+              "RelativeToolTip": "Forms\\AddNewBook.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAUwIcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T09:48:39.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddNewBook.cs [Design]",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs",
+              "RelativeDocumentMoniker": "Forms\\AddNewBook.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewBook.cs [Design]",
+              "RelativeToolTip": "Forms\\AddNewBook.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T09:48:37.58Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IBookSaleRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Repositories\\IBookSaleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IBookSaleRepository.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Repositories\\IBookSaleRepository.cs",
+              "RelativeToolTip": "Repositories\\IBookSaleRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T09:47:44.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddNewBill.Designer.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewBill.Designer.cs",
+              "RelativeDocumentMoniker": "Forms\\AddNewBill.Designer.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewBill.Designer.cs",
+              "RelativeToolTip": "Forms\\AddNewBill.Designer.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAUwGcBAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T09:26:04.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookSaleRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Repositories\\BookSaleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\BookSaleRepository.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Repositories\\BookSaleRepository.cs",
+              "RelativeToolTip": "Repositories\\BookSaleRepository.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAADwv5wAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T09:08:04.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ListBookSales.cs",
+              "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\ListBookSales.cs",
+              "RelativeDocumentMoniker": "Forms\\ListBookSales.cs",
+              "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\ListBookSales.cs",
+              "RelativeToolTip": "Forms\\ListBookSales.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAUwF4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T09:07:24.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AddNewBill.cs",
               "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\AddNewBill.cs",
               "RelativeDocumentMoniker": "Forms\\AddNewBill.cs",
               "ToolTip": "D:\\Codes\\Book_Manager\\Forms\\AddNewBill.cs",
               "RelativeToolTip": "Forms\\AddNewBill.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAIwIQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAIAwwAoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-14T18:23:39.642Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ListBookSales.cs [Design]",
               "DocumentMoniker": "D:\\Codes\\Book_Manager\\Forms\\ListBookSales.cs",
               "RelativeDocumentMoniker": "Forms\\ListBookSales.cs",
@@ -68,13 +169,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "BookSale.cs",
               "DocumentMoniker": "D:\\Codes\\Book_Manager\\Models\\BookSale.cs",
               "RelativeDocumentMoniker": "Models\\BookSale.cs",
               "ToolTip": "D:\\Codes\\Book_Manager\\Models\\BookSale.cs",
               "RelativeToolTip": "Models\\BookSale.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAewFgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAnwFYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-14T17:41:28.086Z",
               "EditorCaption": ""

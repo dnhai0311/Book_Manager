@@ -133,7 +133,7 @@ namespace Book_Manager.Forms
                     publisher = cbPublisher.SelectedIndex,
                 };
 
-                bookSaleRepository.AddSale(bookSale);
+                bookSaleRepository.AddSale(bookSale, true);
 
                 MessageBox.Show("Thêm sách mới thành công!!");
             }
