@@ -131,6 +131,11 @@ namespace Book_Manager.Forms
             cbDiscount.Checked = false;
             cbStudentDiscount.Checked = false;
             txtQuantity.Clear();
+            txtPrice.Clear();
+            lbTotal.Text = string.Empty;
+            total = 0;
+            count = 0;
+            dgvBill.Rows.Clear();
             clear();
         }
 
@@ -153,6 +158,19 @@ namespace Book_Manager.Forms
             count++;
             total += bill.NextDue(cbDiscount.Checked, cbStudentDiscount.Checked);
             lbTotal.Text = total.ToString("C");
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            ListBookSales listBookSalesForm = new ListBookSales(true);
+            if (listBookSalesForm.ShowDialog() == DialogResult.OK)
+            {
+                if (listBookSalesForm.Tag is int selectedBookSaleId)
+                {
+                    cbTitle.SelectedIndex = selectedBookSaleId - 1;
+                }
+            }
+
         }
     }
 }

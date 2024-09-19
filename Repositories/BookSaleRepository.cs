@@ -178,6 +178,7 @@ namespace Book_Manager.Repositories
 
         public void DeleteSale(BookSale bookSale)
         {
+            bookSaleContext.delete(bookSale);
             string query = "DELETE FROM booksales WHERE id = @id";
 
             if (!Database.Open()) return;

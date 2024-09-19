@@ -108,10 +108,9 @@ namespace Book_Manager.Forms
                     File.Copy(imgPath, newFilePath, true);
                     imgPath = newFilePath;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Không thể sao chép ảnh: " + ex.Message);
-                    return;
+                    
                 }
             }
 
@@ -136,6 +135,11 @@ namespace Book_Manager.Forms
                 bookSaleRepository.AddSale(bookSale, true);
 
                 MessageBox.Show("Thêm sách mới thành công!!");
+                txtTitle.Clear();
+                txtPrice.Clear();
+                txtQuantity.Clear();
+                cbAuthor.SelectedIndex = 0;
+                cbPublisher.SelectedIndex = 0;
             }
             else 
             {
@@ -149,6 +153,7 @@ namespace Book_Manager.Forms
                 bookSaleRepository.UpdateSale(bookSale);
 
                 MessageBox.Show("Cập nhật thông tin sách thành công!!");
+                this.Close();
             }
             BookAdded?.Invoke(bookSale);
             bookSale = null;

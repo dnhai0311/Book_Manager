@@ -52,5 +52,15 @@ namespace Book_Manager.Models
                 existingBookSale.price = updatedBookSale.price;
             }
         }
+
+        public void delete(BookSale deletedBookSale)
+        {
+            var existingBookSale = BookSales.FirstOrDefault(bookSale => bookSale.id == deletedBookSale.id);
+            if (existingBookSale != null)
+            {
+                BookSales.Remove(existingBookSale);
+            }
+        }
+
     }
 }

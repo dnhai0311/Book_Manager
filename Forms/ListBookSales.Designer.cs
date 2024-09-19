@@ -45,7 +45,7 @@
             thêmSáchMớiToolStripMenuItem = new ToolStripMenuItem();
             thêmTácGiảMớiToolStripMenuItem = new ToolStripMenuItem();
             thêmNhàXuấtBảnMớiToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1 = new MenuStrip();
+            menuStrip = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             sáchMớiToolStripMenuItem = new ToolStripMenuItem();
             tácGiảMớiToolStripMenuItem = new ToolStripMenuItem();
@@ -56,7 +56,7 @@
             quayLạiToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvListBookSales).BeginInit();
             contextMenuStrip1.SuspendLayout();
-            menuStrip1.SuspendLayout();
+            menuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // dgvListBookSales
@@ -64,10 +64,10 @@
             dgvListBookSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListBookSales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListBookSales.Columns.AddRange(new DataGridViewColumn[] { id, title, img, price, quantity, author, publisher, modify, delete });
-            dgvListBookSales.Location = new Point(12, 102);
+            dgvListBookSales.Location = new Point(11, 101);
             dgvListBookSales.Name = "dgvListBookSales";
             dgvListBookSales.RowHeadersWidth = 51;
-            dgvListBookSales.Size = new Size(1317, 506);
+            dgvListBookSales.Size = new Size(1317, 501);
             dgvListBookSales.TabIndex = 1;
             // 
             // id
@@ -87,7 +87,7 @@
             // img
             // 
             img.HeaderText = "Hình ảnh";
-            img.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            img.ImageLayout = DataGridViewImageCellLayout.Zoom;
             img.MinimumWidth = 6;
             img.Name = "img";
             img.ReadOnly = true;
@@ -142,7 +142,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(541, 42);
+            label1.Location = new Point(541, 43);
             label1.Name = "label1";
             label1.Size = new Size(294, 38);
             label1.TabIndex = 1;
@@ -182,15 +182,16 @@
             thêmNhàXuấtBảnMớiToolStripMenuItem.Size = new Size(234, 24);
             thêmNhàXuấtBảnMớiToolStripMenuItem.Text = "Thêm nhà xuất bản mới";
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, xemToolStripMenuItem, quayLạiToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1341, 28);
-            menuStrip1.TabIndex = 3;
-            menuStrip1.Text = "menuStrip1";
+            menuStrip.ImageScalingSize = new Size(20, 20);
+            menuStrip.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, xemToolStripMenuItem, quayLạiToolStripMenuItem });
+            menuStrip.Location = new Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Padding = new Padding(6, 3, 0, 3);
+            menuStrip.Size = new Size(1341, 30);
+            menuStrip.TabIndex = 3;
+            menuStrip.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
@@ -250,20 +251,20 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1341, 623);
-            Controls.Add(menuStrip1);
+            ClientSize = new Size(1341, 617);
+            Controls.Add(dgvListBookSales);
+            Controls.Add(menuStrip);
             Controls.Add(txtSearch);
             Controls.Add(label1);
-            Controls.Add(dgvListBookSales);
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = menuStrip;
             Name = "ListBookSales";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ListBookSales";
             Load += ListBookSales_Load;
             ((System.ComponentModel.ISupportInitialize)dgvListBookSales).EndInit();
             contextMenuStrip1.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -277,7 +278,7 @@
         private ToolStripMenuItem thêmSáchMớiToolStripMenuItem;
         private ToolStripMenuItem thêmTácGiảMớiToolStripMenuItem;
         private ToolStripMenuItem thêmNhàXuấtBảnMớiToolStripMenuItem;
-        private MenuStrip menuStrip1;
+        private MenuStrip menuStrip;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem sáchMớiToolStripMenuItem;
         private ToolStripMenuItem tácGiảMớiToolStripMenuItem;

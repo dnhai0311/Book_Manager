@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 17, 2024 lúc 09:47 AM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Sep 19, 2024 at 03:34 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,15 +18,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `book_manager`
---
+-- Database: `book_manager`
+
 CREATE DATABASE IF NOT EXISTS `book_manager` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `book_manager`;
+
+--
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `authors`
+-- Table structure for table `authors`
 --
 
 CREATE TABLE `authors` (
@@ -35,23 +37,30 @@ CREATE TABLE `authors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `authors`
+-- Dumping data for table `authors`
 --
 
 INSERT INTO `authors` (`id`, `name`) VALUES
-(1, 'Hai Duong'),
-(2, 'Tran Hieu Nghia'),
-(3, 'Xuân Hương'),
-(4, 'Lý Ngọc Sơn'),
-(5, 'Ly Ngoc Son'),
-(6, 'MCK'),
-(7, 'Hồ Xuân Hương'),
-(8, 'Tun Phẹm');
+(1, 'Nguyễn Nhật Ánh'),
+(2, 'Haruki Murakami'),
+(3, 'J.K. Rowling'),
+(4, 'Marc Levy'),
+(5, 'Tô Hoài'),
+(6, 'Nguyễn Khải'),
+(7, 'Nguyễn Minh Châu'),
+(8, 'Nguyễn Ngọc Tư'),
+(9, 'Nguyễn Bảo'),
+(10, 'Trương Anh Ngọc'),
+(11, 'Lê Minh Quốc'),
+(12, 'Phan Hồn Nhiên'),
+(13, 'Đỗ Bích Thúy'),
+(14, 'Lê Lộc'),
+(15, 'Vũ Trọng Phụng');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `booksales`
+-- Table structure for table `booksales`
 --
 
 CREATE TABLE `booksales` (
@@ -65,20 +74,30 @@ CREATE TABLE `booksales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `booksales`
+-- Dumping data for table `booksales`
 --
 
 INSERT INTO `booksales` (`id`, `title`, `image`, `price`, `quantity`, `author`, `publisher`) VALUES
-(1, 'Đắc Nhân Têm', '..\\..\\..\\Images\\1.jpg', 120000, 3000, 0, 4),
-(2, 'Thời trang nữ', '..\\..\\..\\Images\\2.jpg', 40000, 350, 1, 0),
-(3, 'Thời trang nam', '..\\..\\..\\Images\\3.jpg', 35000, 300, 1, 0),
-(4, 'Thời trang', '..\\..\\..\\Images\\4.jpg', 45000, 200, 7, 3),
-(5, 'Sợ nước nôi', '..\\..\\..\\Images\\5.png', 69000, 1500, 5, 2);
+(1, 'Cô Gái Đến Từ Hôm Qua', '..\\..\\..\\Images\\1.jpg', 150000, 100, 1, 1),
+(2, 'Kafka Bên Bờ Biển', '..\\..\\..\\Images\\2.jpg', 180000, 50, 2, 2),
+(3, 'Harry Potter và Hòn Đá Phù Thủy', '..\\..\\..\\Images\\3.jpg', 200000, 30, 3, 2),
+(4, 'Người Đàn Ông Bán Frites', '..\\..\\..\\Images\\4.jpg', 160000, 20, 4, 3),
+(5, 'Dế Mèn Phiêu Lưu Ký', '..\\..\\..\\Images\\5.jpg', 120000, 150, 5, 4),
+(6, 'Mắt Biếc', '..\\..\\..\\Images\\6.jpg', 200000, 75, 1, 1),
+(7, 'Chuyện Chàng Dại Kỹ', '..\\..\\..\\Images\\7.jpg', 170000, 50, 6, 2),
+(8, 'Chiếc Lược Ngà', '..\\..\\..\\Images\\8.jpg', 100000, 120, 5, 3),
+(9, 'Người Đàn Ông Đánh Đu', '..\\..\\..\\Images\\default-book-img.jpg', 190000, 40, 4, 4),
+(10, 'Đất Rừng Phương Nam', '..\\..\\..\\Images\\default-book-img.jpg', 160000, 80, 8, 5),
+(11, 'Cánh Đồng Bất Tận', '..\\..\\..\\Images\\default-book-img.jpg', 150000, 30, 9, 6),
+(12, 'Bà Dầu Dành Cho Tâm Hồn', '..\\..\\..\\Images\\default-book-img.jpg', 220000, 25, 10, 7),
+(13, 'Về Dưới Mái Nhà', '..\\..\\..\\Images\\default-book-img.jpg', 140000, 60, 11, 8),
+(14, 'Dưới Chân Bàn Thờ', '..\\..\\..\\Images\\default-book-img.jpg', 130000, 70, 12, 9),
+(15, 'Sống Chậm', '..\\..\\..\\Images\\default-book-img.jpg', 250000, 13, 11, 8);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `publishers`
+-- Table structure for table `publishers`
 --
 
 CREATE TABLE `publishers` (
@@ -87,20 +106,25 @@ CREATE TABLE `publishers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `publishers`
+-- Dumping data for table `publishers`
 --
 
 INSERT INTO `publishers` (`id`, `name`) VALUES
-(1, 'Đại Học Cần Thơ'),
-(2, 'NXB Kim Đồng'),
-(3, 'NXB Trẻ'),
-(4, 'IPM'),
-(5, 'NXB SG');
+(1, 'Nhà xuất bản Trẻ'),
+(2, 'Nhà xuất bản Kim Đồng'),
+(3, 'Nhà xuất bản Hội Nhà văn'),
+(4, 'Nhà xuất bản Phụ nữ'),
+(5, 'Nhà xuất bản Văn học'),
+(6, 'Nhà xuất bản Giáo dục'),
+(7, 'Nhà xuất bản Văn học'),
+(8, 'Nhà xuất bản Thanh Niên'),
+(9, 'Nhà xuất bản Đại học Quốc gia '),
+(10, 'Nhà xuất bản Kim Đồng');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -110,58 +134,58 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `password`) VALUES
 (1, 'admin', 'admin');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `authors`
+-- Indexes for table `authors`
 --
 ALTER TABLE `authors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `booksales`
+-- Indexes for table `booksales`
 --
 ALTER TABLE `booksales`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `publishers`
+-- Indexes for table `publishers`
 --
 ALTER TABLE `publishers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `authors`
+-- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT cho bảng `publishers`
+-- AUTO_INCREMENT for table `publishers`
 --
 ALTER TABLE `publishers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

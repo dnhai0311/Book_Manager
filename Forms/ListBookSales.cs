@@ -17,8 +17,10 @@ namespace Book_Manager.Forms
 {
     public partial class ListBookSales : Form
     {
-
+        private int debounceTime = 200;
+        private bool isSearch;
         private System.Windows.Forms.Timer searchTimer;
+        private string oldImg;
 
         AuthorContext authorContext;
         AuthorRepository authorRepository;
@@ -28,9 +30,13 @@ namespace Book_Manager.Forms
         BookSaleRepository bookSaleRepository;
 
 
-        public ListBookSales()
+        public ListBookSales(bool isSearch = false)
         {
             InitializeComponent();
+
+            this.isSearch = isSearch;
+
+            oldImg = String.Empty;
 
             authorContext = new AuthorContext();
             authorRepository = new AuthorRepository(authorContext);
@@ -40,7 +46,7 @@ namespace Book_Manager.Forms
             bookSaleRepository = new BookSaleRepository(bookSaleContext, authorContext, publisherContext);
 
             searchTimer = new System.Windows.Forms.Timer();
-            searchTimer.Interval = 300;
+            searchTimer.Interval = debounceTime;
             searchTimer.Tick += SearchTimer_Tick;
 
             dgvListBookSales.CellContentClick += dgvListBookSales_CellContentClick;
@@ -75,39 +81,7 @@ namespace Book_Manager.Forms
             this.Close();
         }
 
-        private void ListBookSales_Load(object sender, EventArgs e)
-        {
-            authorRepository.UpdateRepositoryWithAllAuthors();
-            publisherRepository.UpdateRepositoryWithAllPublishers();
-
-            dgvListBookSales.RowTemplate.Height = 150;
-            dgvListBookSales.Columns[0].Width = 40;
-            dgvListBookSales.Columns[7].Width = 40;
-            dgvListBookSales.Columns[8].Width = 40;
-            dgvListBookSales.AllowUserToAddRows = false;
-
-
-            bookSaleRepository.UpdateRepositoryWithAllBookSales();
-            dgvListBookSales.Rows.Clear();
-
-            foreach (var bookSale in bookSaleContext.BookSales)
-            {
-                Image img = Image.FromFile(bookSale.image);
-
-                dgvListBookSales.Rows.Add(
-                    bookSale.id,
-                    bookSale.title,
-                    img,
-                    bookSale.price.ToString("C"),
-                    bookSale.quantity,
-                    authorContext.Authors[bookSale.author].name,
-                    publisherContext.Publishers[bookSale.publisher].name
-                );
-            }
-
-        }
-
-        private void OnBookAdded(BookSale bookSale)
+        void addBookToTable(BookSale bookSale)
         {
             Image img = Image.FromFile(bookSale.image);
             dgvListBookSales.Rows.Add(
@@ -119,6 +93,53 @@ namespace Book_Manager.Forms
                 authorContext.Authors[bookSale.author].name,
                 publisherContext.Publishers[bookSale.publisher].name
             );
+        }
+
+        private void ListBookSales_Load(object sender, EventArgs e)
+        {
+            authorRepository.UpdateRepositoryWithAllAuthors();
+            publisherRepository.UpdateRepositoryWithAllPublishers();
+            bookSaleRepository.UpdateRepositoryWithAllBookSales();
+
+            dgvListBookSales.RowTemplate.Height = 150;
+            dgvListBookSales.Columns[0].Width = 40;
+            if (isSearch)
+            {
+                menuStrip.Items.Remove(toolStripMenuItem1);
+                menuStrip.Items.Remove(xemToolStripMenuItem);
+
+                dgvListBookSales.Columns.RemoveAt(7);
+                dgvListBookSales.Columns.RemoveAt(7);
+
+                DataGridViewButtonColumn selectColumn = new DataGridViewButtonColumn
+                {
+                    HeaderText = "",
+                    Name = "select",
+                    Text = "Chọn",
+                    UseColumnTextForButtonValue = true
+                };
+                dgvListBookSales.Columns.Add(selectColumn);
+                dgvListBookSales.Columns[7].Width = 60;
+            }
+            else
+            {
+                dgvListBookSales.Columns[7].Width = 40;
+                dgvListBookSales.Columns[8].Width = 40;
+            }
+            dgvListBookSales.AllowUserToAddRows = false;
+
+            dgvListBookSales.Rows.Clear();
+
+            foreach (var bookSale in bookSaleContext.BookSales)
+            {
+                addBookToTable(bookSale);
+            }
+
+        }
+
+        private void OnBookAdded(BookSale bookSale)
+        {
+            addBookToTable(bookSale);
         }
         private void OnBookUpdated(BookSale bookSale)
         {
@@ -135,6 +156,13 @@ namespace Book_Manager.Forms
                 row.Cells[5].Value = authorContext.Authors[bookSale.author].name;
                 row.Cells[6].Value = publisherContext.Publishers[bookSale.publisher].name;
             }
+            if (oldImg != bookSale.image)
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                File.Delete(oldImg);
+                oldImg = String.Empty;
+            }
         }
         private void SearchBooks(string searchTerm)
         {
@@ -148,22 +176,11 @@ namespace Book_Manager.Forms
     )
     .ToList();
 
-            int id = 0;
+
             foreach (var bookSale in filteredBooks)
             {
-                Image img = Image.FromFile(bookSale.image);
+                addBookToTable(bookSale);
 
-                dgvListBookSales.Rows.Add(
-                    id,
-                    bookSale.title,
-                    img,
-                    bookSale.price.ToString("C"),
-                    bookSale.quantity,
-                    authorContext.Authors[bookSale.author].name,
-                    publisherContext.Publishers[bookSale.publisher].name
-                );
-
-                id++;
             }
         }
 
@@ -186,13 +203,30 @@ namespace Book_Manager.Forms
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == dgvListBookSales.Columns["modify"].Index)
+                if (isSearch && e.ColumnIndex == dgvListBookSales.Columns["select"].Index)
+                {
+                    int selectedBookSaleId = (int)dgvListBookSales.Rows[e.RowIndex].Cells[0].Value;
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Tag = selectedBookSaleId;
+                    this.Close();
+                }
+                else if (e.ColumnIndex == dgvListBookSales.Columns["modify"].Index)
                 {
                     string title = dgvListBookSales.Rows[e.RowIndex].Cells["title"].Value.ToString() ?? string.Empty;
                     var bookSale = bookSaleRepository.GetBookSaleByTitle(title);
                     var addModifyBookForm = new AddNewBook(authorContext, publisherContext, bookSaleRepository, bookSale);
-                    addModifyBookForm.BookAdded += OnBookUpdated;
-                    addModifyBookForm.ShowDialog();
+
+                    var row = dgvListBookSales.Rows.Cast<DataGridViewRow>().FirstOrDefault(r => (int)r.Cells[0].Value == bookSale.id);
+                    if (row != null)
+                    {
+                        oldImg = bookSale.image;
+                        row.Cells[2].Value = null;
+                        addModifyBookForm.BookAdded += OnBookUpdated;
+                        addModifyBookForm.ShowDialog();
+                        row.Cells[2].Value = Image.FromFile(bookSale.image);
+                    }
+
                 }
 
                 else if (e.ColumnIndex == dgvListBookSales.Columns["delete"].Index)
@@ -228,6 +262,7 @@ namespace Book_Manager.Forms
 
             if (bookSale.image != @"..\..\..\Images\default-book-img.jpg" && File.Exists(bookSale.image))
             {
+
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
                 File.Delete(bookSale.image);
